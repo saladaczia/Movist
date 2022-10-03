@@ -20,6 +20,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="fwa-3e-H1C">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="RhO-0f-66d"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Zb3-Er-CKJ"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -33,6 +37,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="dLp-ZY-j6o"/>
                     <connections>
+                        <outlet property="trendingTable" destination="fwa-3e-H1C" id="STf-Ti-VFl"/>
                         <segue destination="vUS-ya-VxP" kind="show" id="ugM-J0-eQX"/>
                     </connections>
                 </viewController>
@@ -46,6 +51,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OuS-xT-ew9" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FsF-Hg-ftC">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
@@ -105,7 +111,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gIC-xV-9up" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-232" y="2377"/>
+            <point key="canvasLocation" x="-233.33333333333334" y="2376.5625"/>
         </scene>
         <!--Upcoming-->
         <scene sceneID="kyv-s1-Lfb">
@@ -259,7 +265,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="bfb-KN-5xJ"/>
+        <segue reference="ugM-J0-eQX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>

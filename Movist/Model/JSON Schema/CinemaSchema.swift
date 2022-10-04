@@ -7,7 +7,7 @@
 
 import Foundation
 
-// MARK: - CinemaSchema
+// MARK: - Welcome
 struct CinemaSchema: Codable {
     let dates: CinemaDates
     let page: Int
@@ -29,13 +29,13 @@ struct CinemaDates: Codable {
 // MARK: - Result
 struct CinemaResult: Codable {
     let adult: Bool
-    let backdropPath: String
+    let backdropPath: String?
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: CinemaResultOriginalLanguage
-    let originalTitle, overview: String
+    let originalLanguage, originalTitle, overview: String
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let posterPath: String?
+    let releaseDate, title: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -56,8 +56,3 @@ struct CinemaResult: Codable {
     }
 }
 
-enum CinemaResultOriginalLanguage: String, Codable {
-    case en = "en"
-    case ja = "ja"
-    case ru = "ru"
-}

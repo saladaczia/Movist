@@ -7,12 +7,17 @@
 
 import UIKit
 
-class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSource {
+
+
+class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
+    
+    var tradingIdNum = 0
+    var titleMovie = ""
     
     @IBOutlet weak var trendingTable: UITableView!
     
     var trendingList = [TrendingResult]()
-    let url = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL")
+    let url = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,5 +51,20 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         cell.pushTrending(data: trendingList[indexPath.row])
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print(trendingList[indexPath.row].id)
+        self.tradingIdNum = trendingList[indexPath.row].id
+        self.titleMovie = trendingList[indexPath.row].title
+        self.performSegue(withIdentifier: "goToDetailsFromTrending", sender: self)
+    }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToDetailsFromTrending" {
+            let destinationSVC = segue.destination as! DetailsController
+            destinationSVC.movieID = tradingIdNum
+            destinationSVC.movieTitle = titleMovie
+        }
+    }
+    
 }

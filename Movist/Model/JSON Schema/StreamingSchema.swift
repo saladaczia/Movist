@@ -13,13 +13,13 @@
 import Foundation
 
 // MARK: - Welcome
-struct Welcome {
+struct StreamingSchema: Codable {
     let id: Int
-    let results: Results
+    let results: StreamingResults
 }
 
 // MARK: - Results
-struct Results {
+struct StreamingResults: Codable {
     let ae, ar, at, au: AE
     let ba, bb: Ba
     let be, bg: AE
@@ -62,10 +62,100 @@ struct Results {
     let ve: AE
     let ye: Ba
     let za: AE
+
+    enum CodingKeys: String, CodingKey {
+        case ae = "AE"
+        case ar = "AR"
+        case at = "AT"
+        case au = "AU"
+        case ba = "BA"
+        case bb = "BB"
+        case be = "BE"
+        case bg = "BG"
+        case bh = "BH"
+        case bo = "BO"
+        case br = "BR"
+        case bs = "BS"
+        case ca = "CA"
+        case ch = "CH"
+        case cl = "CL"
+        case co = "CO"
+        case cr = "CR"
+        case cz = "CZ"
+        case de = "DE"
+        case dk = "DK"
+        case resultsDO = "DO"
+        case dz = "DZ"
+        case ec = "EC"
+        case ee = "EE"
+        case eg = "EG"
+        case es = "ES"
+        case fi = "FI"
+        case fr = "FR"
+        case gb = "GB"
+        case gf = "GF"
+        case gr = "GR"
+        case gt = "GT"
+        case hk = "HK"
+        case hn = "HN"
+        case hr = "HR"
+        case hu = "HU"
+        case id = "ID"
+        case ie = "IE"
+        case il = "IL"
+        case resultsIN = "IN"
+        case iq = "IQ"
+        case resultsIS = "IS"
+        case it = "IT"
+        case jm = "JM"
+        case jo = "JO"
+        case jp = "JP"
+        case kr = "KR"
+        case kw = "KW"
+        case lb = "LB"
+        case lt = "LT"
+        case lv = "LV"
+        case ly = "LY"
+        case ma = "MA"
+        case md = "MD"
+        case mx = "MX"
+        case my = "MY"
+        case nl = "NL"
+        case no = "NO"
+        case nz = "NZ"
+        case om = "OM"
+        case pa = "PA"
+        case pe = "PE"
+        case ph = "PH"
+        case pl = "PL"
+        case ps = "PS"
+        case pt = "PT"
+        case py = "PY"
+        case qa = "QA"
+        case ro = "RO"
+        case ru = "RU"
+        case sa = "SA"
+        case se = "SE"
+        case sg = "SG"
+        case sk = "SK"
+        case sm = "SM"
+        case sv = "SV"
+        case th = "TH"
+        case tn = "TN"
+        case tr = "TR"
+        case tt = "TT"
+        case tw = "TW"
+        case us = "US"
+        case uy = "UY"
+        case va = "VA"
+        case ve = "VE"
+        case ye = "YE"
+        case za = "ZA"
+    }
 }
 
 // MARK: - AE
-struct AE {
+struct AE: Codable {
     let link: String
     let flatrate: [Buy]?
     let rent, buy: [Buy]
@@ -73,16 +163,22 @@ struct AE {
 }
 
 // MARK: - Buy
-struct Buy {
+struct Buy: Codable {
     let logoPath: String
     let providerID: Int
     let providerName: String
     let displayPriority: Int
+
+    enum CodingKeys: String, CodingKey {
+        case logoPath = "logo_path"
+        case providerID = "provider_id"
+        case providerName = "provider_name"
+        case displayPriority = "display_priority"
+    }
 }
 
 // MARK: - Ba
-struct Ba {
+struct Ba: Codable {
     let link: String
     let flatrate: [Buy]
 }
-

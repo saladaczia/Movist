@@ -7,8 +7,7 @@
 
 import Foundation
 
-
-// MARK: - UpcomingSchema
+// MARK: - Welcome
 struct UpcomingSchema: Codable {
     let dates: UpcomingDates
     let page: Int
@@ -30,13 +29,13 @@ struct UpcomingDates: Codable {
 // MARK: - Result
 struct UpcomingResult: Codable {
     let adult: Bool
-    let backdropPath: String
+    let backdropPath: String?
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: UpcomingOriginalLanguage
-    let originalTitle, overview: String
+    let originalLanguage, originalTitle, overview: String
     let popularity: Double
-    let posterPath, releaseDate, title: String
+    let posterPath: String?
+    let releaseDate, title: String
     let video: Bool
     let voteAverage: Double
     let voteCount: Int
@@ -55,11 +54,4 @@ struct UpcomingResult: Codable {
         case voteAverage = "vote_average"
         case voteCount = "vote_count"
     }
-}
-
-enum UpcomingOriginalLanguage: String, Codable {
-    case en = "en"
-    case es = "es"
-    case ja = "ja"
-    case ko = "ko"
 }

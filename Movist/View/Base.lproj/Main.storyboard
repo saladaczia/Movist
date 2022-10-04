@@ -174,13 +174,6 @@
                                     <constraint firstAttribute="height" constant="45" id="DUu-0A-eB7"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmS-2F-fG3">
-                                <rect key="frame" x="39" y="812" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zNd-QL-8rP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -223,7 +216,6 @@
                         <outlet property="descriptionLabel" destination="WX8-rm-dgp" id="RWG-VB-pzw"/>
                         <outlet property="genereLabel" destination="QQk-3i-4ex" id="DgW-Uo-L7U"/>
                         <outlet property="posterImage" destination="Hch-SA-erR" id="PUO-iU-SMH"/>
-                        <outlet property="testLabel" destination="qmS-2F-fG3" id="meh-gv-L0P"/>
                         <outlet property="titleLabel" destination="2Nx-Zr-crR" id="wD4-3e-osy"/>
                         <outlet property="yearLabel" destination="ahP-gm-l6B" id="xpM-ud-hs5"/>
                     </connections>

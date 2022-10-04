@@ -55,6 +55,7 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         self.cinemaIdNum = cinemaList[indexPath.row].id
         self.titleMovie = cinemaList[indexPath.row].title
             self.performSegue(withIdentifier: "goToDetailsFromCinema", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

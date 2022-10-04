@@ -57,7 +57,10 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         self.tradingIdNum = trendingList[indexPath.row].id
         self.titleMovie = trendingList[indexPath.row].title
         self.performSegue(withIdentifier: "goToDetailsFromTrending", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromTrending" {

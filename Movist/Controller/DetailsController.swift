@@ -21,7 +21,7 @@ class DetailsController: UIViewController{
     @IBOutlet weak var StreamingTwo: UIImageView!
     @IBOutlet weak var StreamingThree: UIImageView!
     
-    @IBOutlet weak var testLabel: UILabel!
+
     
         var movieID = 0
         var movieTitle = ""
@@ -47,7 +47,7 @@ class DetailsController: UIViewController{
         }.resume()
     }
     
-
+   
     
   
 

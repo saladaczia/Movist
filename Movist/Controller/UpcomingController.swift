@@ -56,6 +56,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         self.titleMovie = upcomingList[indexPath.row].title
         
         self.performSegue(withIdentifier: "goToDetailsFromUpcoming", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
 
         
     }

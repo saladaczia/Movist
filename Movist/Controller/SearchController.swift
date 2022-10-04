@@ -84,6 +84,7 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         self.searchIdNum = cellContent[indexPath.row].id
         self.titleMovie = cellContent[indexPath.row].title
         self.performSegue(withIdentifier: "goToDetailsFromSearch", sender: self)
+        tableView.deselectRow(at: indexPath, animated: true)
 
         
     }

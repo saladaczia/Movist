@@ -21,7 +21,16 @@ class DetailsController: UIViewController{
     @IBOutlet weak var StreamingTwo: UIImageView!
     @IBOutlet weak var StreamingThree: UIImageView!
     
-
+    @IBAction func watchTrailer(_ sender: Any) {
+        self.performSegue(withIdentifier: "goToWebFromDetails", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "goToWebFromDetails" {
+            let destinationSVC = segue.destination as! WebController
+            destinationSVC.videoId = movieID
+        }
+    }
     
         var movieID = 0
         var movieTitle = ""
@@ -37,7 +46,7 @@ class DetailsController: UIViewController{
                     self.backdropImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.backdropPath)")
                     self.posterImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.posterPath)")
                     self.titleLabel.text = result.title
-                    self.yearLabel.text = String(result.releaseDate.dropLast(6))
+                    self.yearLabel.text = "\(result.releaseDate.dropLast(6)) | \(result.runtime)min"
                     self.descriptionLabel.text = result.overview
                     self.genereLabel.text = result.genres[0].name
                 }

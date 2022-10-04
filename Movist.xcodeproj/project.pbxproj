@@ -17,6 +17,8 @@
 		4E01D41528E5A58200C2D44F /* UpcomingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01D41428E5A58200C2D44F /* UpcomingController.swift */; };
 		4E01D41728E5A5AC00C2D44F /* SearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01D41628E5A5AC00C2D44F /* SearchController.swift */; };
 		4E01D41928E5A5CA00C2D44F /* DetailsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E01D41828E5A5CA00C2D44F /* DetailsController.swift */; };
+		4EBECDBF28EC42C6000CFCA7 /* WebController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBECDBE28EC42C6000CFCA7 /* WebController.swift */; };
+		4EBECDC128EC4BB2000CFCA7 /* VideoSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EBECDC028EC4BB2000CFCA7 /* VideoSchema.swift */; };
 		4EF31FF628EAD027002CE8AE /* TableViewCellCinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF31FF428EAD027002CE8AE /* TableViewCellCinema.swift */; };
 		4EF31FF728EAD027002CE8AE /* TableViewCellCinema.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EF31FF528EAD027002CE8AE /* TableViewCellCinema.xib */; };
 		4EF31FFA28EADB56002CE8AE /* TableViewCellUpcoming.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EF31FF828EADB56002CE8AE /* TableViewCellUpcoming.swift */; };
@@ -46,6 +48,8 @@
 		4E01D41428E5A58200C2D44F /* UpcomingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpcomingController.swift; sourceTree = "<group>"; };
 		4E01D41628E5A5AC00C2D44F /* SearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchController.swift; sourceTree = "<group>"; };
 		4E01D41828E5A5CA00C2D44F /* DetailsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsController.swift; sourceTree = "<group>"; };
+		4EBECDBE28EC42C6000CFCA7 /* WebController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebController.swift; sourceTree = "<group>"; };
+		4EBECDC028EC4BB2000CFCA7 /* VideoSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoSchema.swift; sourceTree = "<group>"; };
 		4EF31FF428EAD027002CE8AE /* TableViewCellCinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellCinema.swift; sourceTree = "<group>"; };
 		4EF31FF528EAD027002CE8AE /* TableViewCellCinema.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCellCinema.xib; sourceTree = "<group>"; };
 		4EF31FF828EADB56002CE8AE /* TableViewCellUpcoming.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCellUpcoming.swift; sourceTree = "<group>"; };
@@ -112,6 +116,7 @@
 				4E01D41428E5A58200C2D44F /* UpcomingController.swift */,
 				4E01D41628E5A5AC00C2D44F /* SearchController.swift */,
 				4E01D41828E5A5CA00C2D44F /* DetailsController.swift */,
+				4EBECDBE28EC42C6000CFCA7 /* WebController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -157,6 +162,7 @@
 				4EFD8B0C28E6D23A00752B9E /* UpcomingSchema.swift */,
 				4EFD8B1028E6D25D00752B9E /* DetailSchema.swift */,
 				4EFD8B1228E6D26A00752B9E /* StreamingSchema.swift */,
+				4EBECDC028EC4BB2000CFCA7 /* VideoSchema.swift */,
 			);
 			path = "JSON Schema";
 			sourceTree = "<group>";
@@ -243,11 +249,13 @@
 				4E01D41728E5A5AC00C2D44F /* SearchController.swift in Sources */,
 				4EF3200628EAE816002CE8AE /* SearchManager.swift in Sources */,
 				4EF3200A28EAEEAA002CE8AE /* SearchSchema.swift in Sources */,
+				4EBECDC128EC4BB2000CFCA7 /* VideoSchema.swift in Sources */,
 				4EFD8B0928E6D21900752B9E /* TrendingSchema.swift in Sources */,
 				4EFD8B1828E6D84300752B9E /* TableViewCell.swift in Sources */,
 				4E01D41128E5A54D00C2D44F /* TrendingController.swift in Sources */,
 				4E01D41328E5A56B00C2D44F /* CinemaController.swift in Sources */,
 				4E01D3FC28E5974D00C2D44F /* SceneDelegate.swift in Sources */,
+				4EBECDBF28EC42C6000CFCA7 /* WebController.swift in Sources */,
 				4EFD8B0D28E6D23A00752B9E /* UpcomingSchema.swift in Sources */,
 				4EF31FFA28EADB56002CE8AE /* TableViewCellUpcoming.swift in Sources */,
 				4EFD8B1128E6D25D00752B9E /* DetailSchema.swift in Sources */,
@@ -413,7 +421,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -441,7 +449,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.0;
+				MARKETING_VERSION = 0.2.1;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

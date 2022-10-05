@@ -122,11 +122,32 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Netflix" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-KX-gr7">
-                                <rect key="frame" x="20" y="511.5" width="48" height="45"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="nZD-KX-gr7">
+                                <rect key="frame" x="20" y="511.5" width="0.0" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="1y4-id-IHr"/>
+                                    <constraint firstAttribute="width" id="1y4-id-IHr"/>
                                     <constraint firstAttribute="height" constant="45" id="GK1-MF-hIC"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="dLa-Aj-3mc">
+                                <rect key="frame" x="20" y="511" width="0.0" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="JLr-4c-T9g"/>
+                                    <constraint firstAttribute="width" id="RB8-ku-nRw"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="rFM-Hf-ctu">
+                                <rect key="frame" x="20" y="511" width="0.0" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" id="BVL-ng-Our"/>
+                                    <constraint firstAttribute="height" constant="45" id="Ii4-RG-0mi"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NY7-r8-sbG">
+                                <rect key="frame" x="20" y="511" width="0.0" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="Jms-OC-Ffi"/>
+                                    <constraint firstAttribute="width" id="vCj-g4-eHv"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Nx-Zr-crR">
@@ -160,17 +181,17 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hbo-max" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-T6-b3U">
-                                <rect key="frame" x="76" y="511.5" width="48" height="45"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Flb-T6-b3U">
+                                <rect key="frame" x="20" y="511.5" width="0.0" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="NuE-16-Gnh"/>
+                                    <constraint firstAttribute="width" id="NuE-16-Gnh"/>
                                     <constraint firstAttribute="height" constant="45" id="ORi-kF-mbF"/>
                                 </constraints>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="disney-plus" translatesAutoresizingMaskIntoConstraints="NO" id="J4l-Fr-XcH">
-                                <rect key="frame" x="132" y="511.5" width="48" height="45"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="J4l-Fr-XcH">
+                                <rect key="frame" x="20" y="511.5" width="0.0" height="45"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="48" id="0lp-4k-PBw"/>
+                                    <constraint firstAttribute="width" id="0lp-4k-PBw"/>
                                     <constraint firstAttribute="height" constant="45" id="DUu-0A-eB7"/>
                                 </constraints>
                             </imageView>
@@ -195,29 +216,35 @@
                         <viewLayoutGuide key="safeArea" id="zNd-QL-8rP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="NY7-r8-sbG" firstAttribute="leading" secondItem="rFM-Hf-ctu" secondAttribute="trailing" id="1ed-de-Qqt"/>
                             <constraint firstItem="QQk-3i-4ex" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Hch-SA-erR" secondAttribute="trailing" constant="8" symbolic="YES" id="3t6-Uf-Z6f"/>
                             <constraint firstItem="J4l-Fr-XcH" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7.5" id="8be-MN-6xW"/>
                             <constraint firstItem="zNd-QL-8rP" firstAttribute="trailing" secondItem="QQk-3i-4ex" secondAttribute="trailing" constant="20" id="BWB-OW-hUM"/>
                             <constraint firstAttribute="trailing" secondItem="Wt2-vI-XsT" secondAttribute="trailing" id="BfR-ci-Pma"/>
+                            <constraint firstItem="rFM-Hf-ctu" firstAttribute="leading" secondItem="dLa-Aj-3mc" secondAttribute="trailing" id="Bsx-Oo-rS1"/>
                             <constraint firstItem="QQk-3i-4ex" firstAttribute="leading" secondItem="Hch-SA-erR" secondAttribute="trailing" constant="19" id="GWw-hG-EbA"/>
                             <constraint firstItem="ahP-gm-l6B" firstAttribute="top" secondItem="2Nx-Zr-crR" secondAttribute="bottom" constant="8" id="HLi-4z-bwb"/>
+                            <constraint firstItem="dLa-Aj-3mc" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7" id="Hct-fB-Bpe"/>
                             <constraint firstItem="QQk-3i-4ex" firstAttribute="top" secondItem="ahP-gm-l6B" secondAttribute="bottom" constant="12" id="Hcy-Ls-gkX"/>
                             <constraint firstItem="Wt2-vI-XsT" firstAttribute="leading" secondItem="8bk-E9-7cn" secondAttribute="leading" id="JSc-Et-xEd"/>
                             <constraint firstItem="Q8M-m4-tMG" firstAttribute="leading" secondItem="zNd-QL-8rP" secondAttribute="leading" constant="20" id="JWO-ET-TO3"/>
+                            <constraint firstItem="dLa-Aj-3mc" firstAttribute="leading" secondItem="J4l-Fr-XcH" secondAttribute="trailing" id="Jzc-rf-s0c"/>
                             <constraint firstItem="Hch-SA-erR" firstAttribute="leading" secondItem="zNd-QL-8rP" secondAttribute="leading" constant="20" id="KrK-B5-qik"/>
                             <constraint firstItem="Hch-SA-erR" firstAttribute="top" secondItem="zNd-QL-8rP" secondAttribute="top" constant="91" id="NMh-Sf-0Ot"/>
                             <constraint firstItem="2Nx-Zr-crR" firstAttribute="top" secondItem="Wt2-vI-XsT" secondAttribute="bottom" constant="8" id="P57-UO-YHc"/>
-                            <constraint firstItem="Flb-T6-b3U" firstAttribute="leading" secondItem="nZD-KX-gr7" secondAttribute="trailing" constant="8" id="Rcy-2m-JcL"/>
+                            <constraint firstItem="Flb-T6-b3U" firstAttribute="leading" secondItem="nZD-KX-gr7" secondAttribute="trailing" id="Rcy-2m-JcL"/>
                             <constraint firstItem="2Nx-Zr-crR" firstAttribute="trailing" secondItem="8bk-E9-7cn" secondAttribute="trailingMargin" id="S7Z-iZ-LUe"/>
                             <constraint firstItem="2Nx-Zr-crR" firstAttribute="leading" secondItem="Hch-SA-erR" secondAttribute="trailing" constant="19" id="T77-u4-LnV"/>
+                            <constraint firstItem="NY7-r8-sbG" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7" id="TUK-7c-h8s"/>
                             <constraint firstItem="tT8-xm-fsr" firstAttribute="leading" secondItem="zNd-QL-8rP" secondAttribute="leading" constant="20" id="VLk-p5-Aip"/>
                             <constraint firstItem="nZD-KX-gr7" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7.5" id="ZOF-y2-svD"/>
                             <constraint firstItem="Q8M-m4-tMG" firstAttribute="top" secondItem="tT8-xm-fsr" secondAttribute="bottom" constant="20" id="Zhk-Io-9eP"/>
-                            <constraint firstItem="J4l-Fr-XcH" firstAttribute="leading" secondItem="Flb-T6-b3U" secondAttribute="trailing" constant="8" id="dsU-ni-gAc"/>
+                            <constraint firstItem="J4l-Fr-XcH" firstAttribute="leading" secondItem="Flb-T6-b3U" secondAttribute="trailing" id="dsU-ni-gAc"/>
                             <constraint firstItem="ahP-gm-l6B" firstAttribute="leading" secondItem="Hch-SA-erR" secondAttribute="trailing" constant="19" id="ebi-2O-T94"/>
                             <constraint firstItem="Wt2-vI-XsT" firstAttribute="top" secondItem="8bk-E9-7cn" secondAttribute="top" constant="42" id="eyA-a9-bUX"/>
                             <constraint firstItem="Flb-T6-b3U" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7.5" id="fJm-kH-tKT"/>
                             <constraint firstItem="zNd-QL-8rP" firstAttribute="trailing" secondItem="WX8-rm-dgp" secondAttribute="trailing" constant="20" id="ff6-QB-H7M"/>
+                            <constraint firstItem="rFM-Hf-ctu" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7" id="fwu-EO-juk"/>
                             <constraint firstItem="WX8-rm-dgp" firstAttribute="leading" secondItem="zNd-QL-8rP" secondAttribute="leading" constant="20" id="ncM-ue-DXm"/>
                             <constraint firstItem="tT8-xm-fsr" firstAttribute="top" secondItem="WX8-rm-dgp" secondAttribute="bottom" constant="20" id="nnb-l2-qZf"/>
                             <constraint firstItem="WX8-rm-dgp" firstAttribute="top" secondItem="Hch-SA-erR" secondAttribute="bottom" constant="14" id="p8n-5Y-AD9"/>
@@ -229,12 +256,26 @@
                     <navigationItem key="navigationItem" id="gLH-7B-Fhb"/>
                     <connections>
                         <outlet property="StreamigOne" destination="nZD-KX-gr7" id="h6I-lr-Odw"/>
+                        <outlet property="StreamingFive" destination="rFM-Hf-ctu" id="joW-eA-qPC"/>
+                        <outlet property="StreamingFour" destination="dLa-Aj-3mc" id="T31-n5-IC7"/>
+                        <outlet property="StreamingSix" destination="NY7-r8-sbG" id="Wz8-fC-0XV"/>
                         <outlet property="StreamingThree" destination="J4l-Fr-XcH" id="YKI-iT-LGy"/>
                         <outlet property="StreamingTwo" destination="Flb-T6-b3U" id="MhF-hF-PfW"/>
                         <outlet property="backdropImage" destination="Wt2-vI-XsT" id="LCP-Mp-v1i"/>
+                        <outlet property="conFive" destination="BVL-ng-Our" id="cKB-Nl-beb"/>
+                        <outlet property="conFour" destination="RB8-ku-nRw" id="3t7-sx-xqo"/>
+                        <outlet property="conOne" destination="1y4-id-IHr" id="dyy-yZ-5BQ"/>
+                        <outlet property="conSix" destination="vCj-g4-eHv" id="V8W-k7-XLJ"/>
+                        <outlet property="conThree" destination="0lp-4k-PBw" id="xkb-kU-uol"/>
+                        <outlet property="conTwo" destination="NuE-16-Gnh" id="nhB-5d-fCd"/>
                         <outlet property="descriptionLabel" destination="WX8-rm-dgp" id="RWG-VB-pzw"/>
                         <outlet property="genereLabel" destination="QQk-3i-4ex" id="DgW-Uo-L7U"/>
                         <outlet property="posterImage" destination="Hch-SA-erR" id="PUO-iU-SMH"/>
+                        <outlet property="spaceFive" destination="Bsx-Oo-rS1" id="WI7-Kh-Eny"/>
+                        <outlet property="spaceFour" destination="Jzc-rf-s0c" id="iof-Zu-2AH"/>
+                        <outlet property="spaceSix" destination="1ed-de-Qqt" id="zgo-yc-dXq"/>
+                        <outlet property="spaceThree" destination="dsU-ni-gAc" id="GTQ-vg-MWW"/>
+                        <outlet property="spaceTwo" destination="Rcy-2m-JcL" id="zSr-zM-FT4"/>
                         <outlet property="titleLabel" destination="2Nx-Zr-crR" id="wD4-3e-osy"/>
                         <outlet property="yearLabel" destination="ahP-gm-l6B" id="xpM-ud-hs5"/>
                         <segue destination="pV3-d6-Hck" kind="showDetail" identifier="goToWebFromDetails" id="oRT-wv-wn8"/>
@@ -444,11 +485,8 @@
         <segue reference="ScB-PQ-5BI"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="Netflix" width="1200" height="1200"/>
-        <image name="disney-plus" width="300" height="300"/>
         <image name="film" catalog="system" width="128" height="93"/>
         <image name="flame.fill" catalog="system" width="108" height="128"/>
-        <image name="hbo-max" width="468" height="468"/>
         <image name="list.and.film" catalog="system" width="128" height="86"/>
         <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="play.circle" catalog="system" width="128" height="121"/>

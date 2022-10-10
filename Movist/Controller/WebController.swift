@@ -16,30 +16,24 @@ class WebController: UIViewController {
     
     // MARK: - Variables and Constants
     
-    var videoId = 0
+    
+    var videoUrl = ""
     
     // MARK: - Function Trailer database
     
     func getDetails() {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(videoId)/videos?api_key=dfa4cb178f87b623801a1223f21a555d&language=en-US")
         
-        URLSession.shared.dataTask(with: url!) {
-            (data,req,error) in
-            do {
-                let result = try JSONDecoder().decode(VideoSchema.self, from: data!)
                 DispatchQueue.main.async {
                     
                     
-                    let url = URL(string: "https://www.youtube.com/watch?v=\(result.results[0].key)")
+                    let url = URL(string: "https://www.youtube.com/watch?v=\(self.videoUrl)")
 
                         let request = URLRequest(url: url!)
                     self.web.load(request)
                 }
-            } catch {
-                print("error")
-            }
-        }.resume()
-    }
+            
+        }
+    
     
     // MARK: - ViewDidLoad
     
@@ -49,7 +43,7 @@ class WebController: UIViewController {
         // Init movies database
         getDetails()
         
-        print(self.videoId)
+        
     }
     
 

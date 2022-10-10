@@ -38,10 +38,19 @@ class DetailsController: UIViewController{
     @IBOutlet weak var spaceFive: NSLayoutConstraint!
     @IBOutlet weak var spaceSix: NSLayoutConstraint!
     
+    @IBOutlet weak var trailerLabel: UIButton!
+    @IBOutlet weak var conTrailer: NSLayoutConstraint!
+
+    
     
     // MARK: - Actions
     @IBAction func watchTrailer(_ sender: Any) {
-        self.performSegue(withIdentifier: "goToWebFromDetails", sender: self)
+        if movieTrailerUrl != "" {
+            self.performSegue(withIdentifier: "goToWebFromDetails", sender: self)
+        } else {
+            print("error")
+        }
+        
     }
     
     // MARK: - Variables and Constants
@@ -49,12 +58,13 @@ class DetailsController: UIViewController{
     var movieID = 0
     var movieTitle = ""
     var providerTable = [String]()
+    var movieTrailerUrl = ""
     
     // MARK: - Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToWebFromDetails" {
             let destinationSVC = segue.destination as! WebController
-            destinationSVC.videoId = movieID
+            destinationSVC.videoUrl = movieTrailerUrl
         }
     }
     
@@ -82,6 +92,32 @@ class DetailsController: UIViewController{
         }.resume()
     }
     
+    // MARK: - Function get url trailer
+    
+    func getTrailer() {
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/videos?api_key=dfa4cb178f87b623801a1223f21a555d&language=en-US")
+        
+        URLSession.shared.dataTask(with: url!) {
+            (data,req,error) in
+            do {
+                let result = try JSONDecoder().decode(VideoSchema.self, from: data!)
+                DispatchQueue.main.async {
+                    
+                    if result.results.isEmpty {
+                        self.trailerLabel.isHidden = true
+                        self.conTrailer.constant = 0
+                    } else {
+                        self.movieTrailerUrl = result.results[0].key
+                    }
+                       
+                }
+            } catch {
+                print("error")
+            }
+        }.resume()
+    }
+    
+    
     // MARK: - Function Provider Movie Info
     
     func getProvider() {
@@ -105,51 +141,54 @@ class DetailsController: UIViewController{
                         self.providerTable.append(result.results.pl.flatrate![number].providerName)
                         } else {
                             print("error")
+                            
                         }
                 }
                    
                     
-                    if self.providerTable.contains("Netflix") {
-                        self.StreamigOne.image = UIImage(named: "Netflix")
-                        self.conOne.constant = 48
-                    }
-                
-                    if self.providerTable.contains("Horizon") {
-                        self.StreamingTwo.image = UIImage(named: "Horizon")
-                        self.conTwo.constant = 48
-                        if self.providerTable.count > 1 {
-                        self.spaceTwo.constant = 8
-                        }
+                        if self.providerTable.contains("Netflix") {
+                            self.StreamigOne.image = UIImage(named: "Netflix")
+                            self.conOne.constant = 48
                         }
                     
-                    if self.providerTable.contains("HBO Max") {
-                        self.StreamingThree.image = UIImage(named: "HBO Max")
-                        self.conThree.constant = 48
-                        if self.providerTable.count > 1 {
-                        self.spaceThree.constant = 8
+                        if self.providerTable.contains("Horizon") {
+                            self.StreamingTwo.image = UIImage(named: "Horizon")
+                            self.conTwo.constant = 48
+                            if self.providerTable.count > 1 {
+                            self.spaceTwo.constant = 8
+                            }
+                            }
+                        
+                        if self.providerTable.contains("HBO Max") {
+                            self.StreamingThree.image = UIImage(named: "HBO Max")
+                            self.conThree.constant = 48
+                            if self.providerTable.count > 1 {
+                            self.spaceThree.constant = 8
+                            }
                         }
-                    }
-                    if self.providerTable.contains("Disney Plus") {
-                        self.StreamingFour.image = UIImage(named: "Disney Plus")
-                        self.conFour.constant = 48
-                        if self.providerTable.count > 1 {
-                        self.spaceFour.constant = 8
+                        if self.providerTable.contains("Disney Plus") {
+                            self.StreamingFour.image = UIImage(named: "Disney Plus")
+                            self.conFour.constant = 48
+                            if self.providerTable.count > 1 {
+                            self.spaceFour.constant = 8
+                            }
                         }
-                    }
-                    if self.providerTable.contains("Apple TV Plus") {
-                        self.StreamingFive.image = UIImage(named: "Apple TV Plus")
-                        self.conFive.constant = 48
-                        if self.providerTable.count > 1 {
-                        self.spaceFive.constant = 8
+                        if self.providerTable.contains("Apple TV Plus") {
+                            self.StreamingFive.image = UIImage(named: "Apple TV Plus")
+                            self.conFive.constant = 48
+                            if self.providerTable.count > 1 {
+                            self.spaceFive.constant = 8
+                            }
                         }
-                    }
-                    if self.providerTable.contains("Player") {
-                        self.StreamingSix.image = UIImage(named: "Player")
-                        self.conSix.constant = 48
-                        if self.providerTable.count > 1 {
-                        self.spaceSix.constant = 8
+                        if self.providerTable.contains("Player") {
+                            self.StreamingSix.image = UIImage(named: "Player")
+                            self.conSix.constant = 48
+                            if self.providerTable.count > 1 {
+                            self.spaceSix.constant = 8
+                            }
                         }
-                    }
+                    
+                    
                 }
             } catch {
                 print("error")
@@ -177,6 +216,8 @@ class DetailsController: UIViewController{
         // init functions
         getDetails()
         getProvider()
+        getTrailer()
+        
     }
     
 

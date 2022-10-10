@@ -197,6 +197,9 @@
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tT8-xm-fsr">
                                 <rect key="frame" x="20" y="432" width="137.5" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="qKJ-ia-Prh"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray">
                                     <imageReference key="image" image="play.circle" catalog="system" symbolScale="medium"/>
@@ -267,6 +270,7 @@
                         <outlet property="conOne" destination="1y4-id-IHr" id="dyy-yZ-5BQ"/>
                         <outlet property="conSix" destination="vCj-g4-eHv" id="V8W-k7-XLJ"/>
                         <outlet property="conThree" destination="0lp-4k-PBw" id="xkb-kU-uol"/>
+                        <outlet property="conTrailer" destination="qKJ-ia-Prh" id="OsD-ru-oyC"/>
                         <outlet property="conTwo" destination="NuE-16-Gnh" id="nhB-5d-fCd"/>
                         <outlet property="descriptionLabel" destination="WX8-rm-dgp" id="RWG-VB-pzw"/>
                         <outlet property="genereLabel" destination="QQk-3i-4ex" id="DgW-Uo-L7U"/>
@@ -277,6 +281,7 @@
                         <outlet property="spaceThree" destination="dsU-ni-gAc" id="GTQ-vg-MWW"/>
                         <outlet property="spaceTwo" destination="Rcy-2m-JcL" id="zSr-zM-FT4"/>
                         <outlet property="titleLabel" destination="2Nx-Zr-crR" id="wD4-3e-osy"/>
+                        <outlet property="trailerLabel" destination="tT8-xm-fsr" id="IpB-W9-eVF"/>
                         <outlet property="yearLabel" destination="ahP-gm-l6B" id="xpM-ud-hs5"/>
                         <segue destination="pV3-d6-Hck" kind="showDetail" identifier="goToWebFromDetails" id="oRT-wv-wn8"/>
                     </connections>

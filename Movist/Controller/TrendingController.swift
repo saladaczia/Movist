@@ -11,20 +11,20 @@ import UIKit
 
 class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
     
-    var tradingIdNum = 0
-    var titleMovie = ""
+    // MARK: - Outlets
     
     @IBOutlet weak var trendingTable: UITableView!
     
+    // MARK: - Variables and Constants
+    
+    var tradingIdNum = 0
+    var titleMovie = ""
     var trendingList = [TrendingResult]()
     let url = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Popularne"
-        
-        trendingTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
+    // MARK: - Function Trending database
+    
+    func getTrending() {
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
@@ -37,11 +37,27 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
                 
             }
         }.resume()
+    }
+    
+    // MARK: - ViewDidLoad
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Navigation title
+        navigationItem.title = "Popularne"
+        
+        // UINib table
+        trendingTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        
+        // Init movies database
+        getTrending()
         
     }
     
     
-    // Trending Table
+    // MARK: - Trending Table
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return trendingList.count
     }
@@ -61,7 +77,8 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     }
     
     
-
+    // MARK: - Prepare Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromTrending" {
             let destinationSVC = segue.destination as! DetailsController
@@ -69,5 +86,6 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
             destinationSVC.movieTitle = titleMovie
         }
     }
+    
     
 }

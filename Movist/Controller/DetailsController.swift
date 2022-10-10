@@ -9,7 +9,8 @@ import UIKit
 
 class DetailsController: UIViewController{
     
-   
+    // MARK: - Outlets
+    
     @IBOutlet weak var backdropImage: UIImageView!
     @IBOutlet weak var posterImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
@@ -38,11 +39,18 @@ class DetailsController: UIViewController{
     @IBOutlet weak var spaceSix: NSLayoutConstraint!
     
     
-    
+    // MARK: - Actions
     @IBAction func watchTrailer(_ sender: Any) {
         self.performSegue(withIdentifier: "goToWebFromDetails", sender: self)
     }
     
+    // MARK: - Variables and Constants
+    
+    var movieID = 0
+    var movieTitle = ""
+    var providerTable = [String]()
+    
+    // MARK: - Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToWebFromDetails" {
             let destinationSVC = segue.destination as! WebController
@@ -50,9 +58,7 @@ class DetailsController: UIViewController{
         }
     }
     
-        var movieID = 0
-        var movieTitle = ""
-    var providerTable = [String]()
+    // MARK: - Function Details database
     
     func getDetails() {
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL")
@@ -76,6 +82,8 @@ class DetailsController: UIViewController{
         }.resume()
     }
     
+    // MARK: - Function Provider Movie Info
+    
     func getProvider() {
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/watch/providers?api_key=dfa4cb178f87b623801a1223f21a555d")
         
@@ -84,13 +92,23 @@ class DetailsController: UIViewController{
             do {
                 let result = try JSONDecoder().decode(StreamingSchema.self, from: data!)
                 DispatchQueue.main.async {
-                    let myNumber = result.results.pl.flatrate!.count - 1
+                    var myNumber = 0
+                    if result.results.pl.flatrate?.count != nil {
+                        myNumber = result.results.pl.flatrate!.count - 1
+                    } else {
+                        print("error")
+                    }
+                    
                     
                     for number in 0...myNumber {
+                        if result.results.pl.flatrate?.count != nil {
                         self.providerTable.append(result.results.pl.flatrate![number].providerName)
-                        
+                        } else {
+                            print("error")
+                        }
                 }
                    
+                    
                     if self.providerTable.contains("Netflix") {
                         self.StreamigOne.image = UIImage(named: "Netflix")
                         self.conOne.constant = 48
@@ -98,7 +116,7 @@ class DetailsController: UIViewController{
                 
                     if self.providerTable.contains("Horizon") {
                         self.StreamingTwo.image = UIImage(named: "Horizon")
-                        self.conOne.constant = 48
+                        self.conTwo.constant = 48
                         if self.providerTable.count > 1 {
                         self.spaceTwo.constant = 8
                         }
@@ -132,42 +150,39 @@ class DetailsController: UIViewController{
                         self.spaceSix.constant = 8
                         }
                     }
-                    
-
-                    
-                    
-                    
-                    
-                    
                 }
             } catch {
                 print("error")
             }
         }.resume()
+        
     }
     
-  
-
-    
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
+        
+        // Setings Back button in Navigation Bar
         let backButton = UIBarButtonItem()
         backButton.title = movieTitle
         backButton.tintColor = UIColor.white
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
+        
+        // Setings Images
         posterImage.layer.borderColor = UIColor(named: "ColorImage")?.cgColor
         posterImage.layer.masksToBounds = true
         posterImage.contentMode = .scaleToFill
         posterImage.layer.borderWidth = 5
-        // Do any additional setup after loading the view.
         
+        // init functions
         getDetails()
         getProvider()
     }
     
 
-
 }
+
+// MARK: - UIImage Extension (download image from url)
 
 extension UIImageView {
     func downloadedDetails(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {

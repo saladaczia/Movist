@@ -9,21 +9,20 @@ import UIKit
 
 class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
-    var upcomingIdNum = 0
-    var titleMovie = ""
+    // MARK: - Outlets
     
     @IBOutlet weak var upcomingTable: UITableView!
     
-    var upcomingList = [UpcomingResult]()
+    // MARK: - Variables and Constants
     
+    var upcomingIdNum = 0
+    var titleMovie = ""
+    var upcomingList = [UpcomingResult]()
     let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&page=1&region=PL")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "Premiery"
-        
-        upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
-        
+    // MARK: - Function Upcoming database
+    
+    func getUpcoming() {
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
@@ -38,7 +37,24 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         }.resume()
     }
     
-    // Trending Table
+    // MARK: - ViewDidLoad
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Navigation title
+        navigationItem.title = "Premiery"
+        
+        // UINib table
+        upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
+        
+        // Init movies database
+        getUpcoming()
+        
+    }
+    
+    // MARK: - Upcoming Table
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return upcomingList.count
     }
@@ -61,6 +77,8 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         
     }
     
+    // MARK: - Prepare Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromUpcoming" {
             let destinationSVC = segue.destination as! DetailsController
@@ -68,5 +86,6 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
             destinationSVC.movieTitle = titleMovie
         }
     }
+    
     
 }

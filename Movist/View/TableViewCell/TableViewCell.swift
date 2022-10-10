@@ -8,7 +8,9 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var titleLabelCell: UILabel!
     @IBOutlet weak var yearLabelCell: UILabel!
     @IBOutlet weak var descriptionLabelCell: UILabel!
@@ -25,6 +27,8 @@ class TableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Function push Trending database
+    
     func pushTrending(data: TrendingResult) {
         titleLabelCell.text = data.title
         yearLabelCell.text = "\(data.releaseDate.dropLast(6))"
@@ -36,7 +40,7 @@ class TableViewCell: UITableViewCell {
     
 }
 
-// Extension Image for Posters
+// MARK: - UIImage Extension (download image from url)
 extension UIImageView {
     func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode

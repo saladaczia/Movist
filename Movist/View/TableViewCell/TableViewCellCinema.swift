@@ -8,7 +8,9 @@
 import UIKit
 
 class TableViewCellCinema: UITableViewCell {
-
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var titleLabelCellCinema: UILabel!
     @IBOutlet weak var yearLabelCellCinema: UILabel!
     @IBOutlet weak var descriptionLabelCellCinema: UILabel!
@@ -24,6 +26,8 @@ class TableViewCellCinema: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    
+    // MARK: - Function push Cinema database
     
     func pushCinema(data: CinemaResult) {
         titleLabelCellCinema.text = data.title
@@ -43,7 +47,7 @@ class TableViewCellCinema: UITableViewCell {
     
 }
 
-// Extension Image for Posters
+// MARK: - UIImage Extension (download image from url)
 extension UIImageView {
     func downloadedCinema(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode

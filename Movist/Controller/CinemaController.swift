@@ -8,22 +8,21 @@
 import UIKit
 
 class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate{
-
-    var cinemaIdNum = 0
-    var titleMovie = ""
+    
+    // MARK: - Outlets
     
     @IBOutlet weak var cinemaTable: UITableView!
     
-    var cinemaList = [CinemaResult]()
+    // MARK: - Variables and Constants
     
+    var cinemaIdNum = 0
+    var titleMovie = ""
+    var cinemaList = [CinemaResult]()
     let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&page=1&region=PL")
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        navigationItem.title = "W kinach"
-        
-        cinemaTable.register(UINib(nibName: "TableViewCellCinema", bundle: nil), forCellReuseIdentifier: "cellCinema")
-        
+    // MARK: - Function Cinema database
+    
+    func getCinema() {
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
@@ -38,7 +37,24 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         }.resume()
     }
     
-    // Trending Table
+    // MARK: - ViewDidLoad
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        // Navigation title
+        navigationItem.title = "W kinach"
+        
+        // UINib table
+        cinemaTable.register(UINib(nibName: "TableViewCellCinema", bundle: nil), forCellReuseIdentifier: "cellCinema")
+        
+        // Init movies database
+        getCinema()
+        
+    }
+    
+    // MARK: - Cinema Table
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return cinemaList.count
     }
@@ -58,6 +74,8 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    // MARK: - Prepare Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromCinema" {
             let destinationSVC = segue.destination as! DetailsController
@@ -65,4 +83,6 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
             destinationSVC.movieTitle = titleMovie
         }
     }
+    
+    
 }

@@ -136,7 +136,6 @@
 				4EFD8B0728E6D1B400752B9E /* JSON Schema */,
 				4EF3200328EAE7F9002CE8AE /* SearchModel.swift */,
 				4EF3200528EAE816002CE8AE /* SearchManager.swift */,
-				4EF3200928EAEEAA002CE8AE /* SearchSchema.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -163,6 +162,7 @@
 				4EFD8B1028E6D25D00752B9E /* DetailSchema.swift */,
 				4EFD8B1228E6D26A00752B9E /* StreamingSchema.swift */,
 				4EBECDC028EC4BB2000CFCA7 /* VideoSchema.swift */,
+				4EF3200928EAEEAA002CE8AE /* SearchSchema.swift */,
 			);
 			path = "JSON Schema";
 			sourceTree = "<group>";
@@ -422,7 +422,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -451,7 +451,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.3;
+				MARKETING_VERSION = 0.2.4;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

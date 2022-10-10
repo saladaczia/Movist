@@ -9,6 +9,8 @@ import UIKit
 
 class TableViewCellUpcoming: UITableViewCell {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var titleLabelCellUpcoming: UILabel!
     @IBOutlet weak var yearLabelCellUpcoming: UILabel!
     @IBOutlet weak var descriptionLabelCellUpcoming: UILabel!
@@ -25,6 +27,7 @@ class TableViewCellUpcoming: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    // MARK: - Function push Upcoming database
     func pushUpcoming(data: UpcomingResult) {
         titleLabelCellUpcoming.text = data.title
         yearLabelCellUpcoming.text = data.releaseDate
@@ -44,7 +47,7 @@ class TableViewCellUpcoming: UITableViewCell {
     
 }
 
-// Extension Image for Posters
+// MARK: - UIImage Extension (download image from url)
 extension UIImageView {
     func downloadedUpcoming(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode

@@ -9,15 +9,18 @@ import UIKit
 
 class SearchController: UIViewController, SearchManagerDelegate, UITableViewDelegate, UITableViewDataSource,  UISearchResultsUpdating {
 
-    var searchIdNum = 0
-    var titleMovie = ""
+    // MARK: - Outlets
     
     @IBOutlet weak var searchTable: UITableView!
     
+    // MARK: - Variables and Constants
+    var searchIdNum = 0
+    var titleMovie = ""
     let searchController = UISearchController()
-    
-    // do edycji
     var cellContent: [Result] = []
+    var movieManager = SearchManager()
+    
+    // MARK: - Function Search database
     
     func didUpdateMovie(movie: SearchModel) {
         
@@ -26,35 +29,34 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
             self.cellContent = movie.movieTitle
             self.searchTable.reloadData()
             
-            
-            
         }
+        
     }
 
-    var movieManager = SearchManager()
-
-    
+    // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Szukaj filmu"
-        movieManager.delegate = self
         
+        // Navigation title
+        title = "Szukaj filmu"
+        
+        // Delegate
+        movieManager.delegate = self
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
+    
+    // MARK: - Update Search function
     
     func updateSearchResults(for searchController: UISearchController) {
         guard let text = searchController.searchBar.text else {
             return
         }
-        
-        
         movieManager.fetchMovie(movieName: text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
-       
     }
     
-    // TableView
+    // MARK: - Search Table
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
     return 1
     }
@@ -64,17 +66,14 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-       // identyfikator wiersza w view main
+       
         let cell = UITableViewCell(style: .default, reuseIdentifier: "Cell")
-        
-        // zawartość wiersza
         if cellContent[indexPath.row].releaseDate == nil {
             cell.textLabel?.text = ""
         } else {
             cell.textLabel?.text = "\(cellContent[indexPath.row].title) (\(cellContent[indexPath.row].releaseDate!.dropLast(6)))"
         }
-        
-        // zwrot wartości wiersza
+ 
         return cell
     }
     
@@ -89,6 +88,8 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         
     }
     
+    // MARK: - Prepare Segue
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromSearch" {
             let destinationSVC = segue.destination as! DetailsController
@@ -96,6 +97,7 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
             destinationSVC.movieTitle = titleMovie
         }
     }
+    
     
 }
 

@@ -10,10 +10,15 @@ import WebKit
 
 class WebController: UIViewController {
 
+    // MARK: - Outlets
+    
     @IBOutlet weak var web: WKWebView!
     
+    // MARK: - Variables and Constants
+    
     var videoId = 0
-    var videoUrlKey = ""
+    
+    // MARK: - Function Trailer database
     
     func getDetails() {
         let url = URL(string: "https://api.themoviedb.org/3/movie/\(videoId)/videos?api_key=dfa4cb178f87b623801a1223f21a555d&language=en-US")
@@ -23,35 +28,29 @@ class WebController: UIViewController {
             do {
                 let result = try JSONDecoder().decode(VideoSchema.self, from: data!)
                 DispatchQueue.main.async {
-                    self.videoUrlKey = result.results[0].key
+                    
+                    
                     let url = URL(string: "https://www.youtube.com/watch?v=\(result.results[0].key)")
-                        
+
                         let request = URLRequest(url: url!)
                     self.web.load(request)
                 }
             } catch {
-                
+                print("error")
             }
         }.resume()
     }
     
+    // MARK: - ViewDidLoad
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Init movies database
         getDetails()
         
-            
         print(self.videoId)
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

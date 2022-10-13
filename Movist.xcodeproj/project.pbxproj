@@ -33,6 +33,7 @@
 		4EFD8B1328E6D26A00752B9E /* StreamingSchema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD8B1228E6D26A00752B9E /* StreamingSchema.swift */; };
 		4EFD8B1828E6D84300752B9E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD8B1628E6D84300752B9E /* TableViewCell.swift */; };
 		4EFD8B1928E6D84300752B9E /* TableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4EFD8B1728E6D84300752B9E /* TableViewCell.xib */; };
+		D285575B9CD93951F6117150 /* Pods_Movist.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB259E7C37685F76AF363E64 /* Pods_Movist.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,9 @@
 		4EFD8B1228E6D26A00752B9E /* StreamingSchema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamingSchema.swift; sourceTree = "<group>"; };
 		4EFD8B1628E6D84300752B9E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		4EFD8B1728E6D84300752B9E /* TableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TableViewCell.xib; sourceTree = "<group>"; };
+		B43ADA7A158919E866D2CD00 /* Pods-Movist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movist.release.xcconfig"; path = "Target Support Files/Pods-Movist/Pods-Movist.release.xcconfig"; sourceTree = "<group>"; };
+		D14497C6D1AD90882F1D7CBE /* Pods-Movist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Movist.debug.xcconfig"; path = "Target Support Files/Pods-Movist/Pods-Movist.debug.xcconfig"; sourceTree = "<group>"; };
+		FB259E7C37685F76AF363E64 /* Pods_Movist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D285575B9CD93951F6117150 /* Pods_Movist.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -82,6 +87,8 @@
 			children = (
 				4E01D3F828E5974D00C2D44F /* Movist */,
 				4E01D3F728E5974D00C2D44F /* Products */,
+				4FAE425EC33B96D57EAADF95 /* Pods */,
+				EE4269A7036A68452AE26E65 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -167,6 +174,23 @@
 			path = "JSON Schema";
 			sourceTree = "<group>";
 		};
+		4FAE425EC33B96D57EAADF95 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D14497C6D1AD90882F1D7CBE /* Pods-Movist.debug.xcconfig */,
+				B43ADA7A158919E866D2CD00 /* Pods-Movist.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		EE4269A7036A68452AE26E65 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FB259E7C37685F76AF363E64 /* Pods_Movist.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,9 +198,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E01D40A28E5974F00C2D44F /* Build configuration list for PBXNativeTarget "Movist" */;
 			buildPhases = (
+				818E0C2B61F2A7C2653DF487 /* [CP] Check Pods Manifest.lock */,
 				4E01D3F228E5974D00C2D44F /* Sources */,
 				4E01D3F328E5974D00C2D44F /* Frameworks */,
 				4E01D3F428E5974D00C2D44F /* Resources */,
+				718F27D5E601B78550A57083 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -235,6 +261,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		718F27D5E601B78550A57083 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movist/Pods-Movist-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Movist/Pods-Movist-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Movist/Pods-Movist-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		818E0C2B61F2A7C2653DF487 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Movist-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		4E01D3F228E5974D00C2D44F /* Sources */ = {
@@ -404,6 +472,7 @@
 		};
 		4E01D40B28E5974F00C2D44F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D14497C6D1AD90882F1D7CBE /* Pods-Movist.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -422,7 +491,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.4;
+				MARKETING_VERSION = 0.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -433,6 +502,7 @@
 		};
 		4E01D40C28E5974F00C2D44F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B43ADA7A158919E866D2CD00 /* Pods-Movist.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -451,7 +521,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.4;
+				MARKETING_VERSION = 0.2.6;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

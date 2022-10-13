@@ -45,10 +45,10 @@
             </objects>
             <point key="canvasLocation" x="-1339.1304347826087" y="1581.6964285714284"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Circle Bar Controller-->
         <scene sceneID="Oyn-eh-mFX">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OuS-xT-ew9" sceneMemberID="viewController">
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OuS-xT-ew9" customClass="SHCircleBarController" customModule="CircleBar" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FsF-Hg-ftC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

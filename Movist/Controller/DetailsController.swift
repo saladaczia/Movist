@@ -40,7 +40,8 @@ class DetailsController: UIViewController{
     
     @IBOutlet weak var trailerLabel: UIButton!
     @IBOutlet weak var conTrailer: NSLayoutConstraint!
-
+    @IBOutlet weak var voteLabel: UILabel!
+    
     
     
     // MARK: - Actions
@@ -84,7 +85,11 @@ class DetailsController: UIViewController{
                     self.yearLabel.text = "\(result.releaseDate.dropLast(6)) | \(result.runtime)min"
                     self.descriptionLabel.text = result.overview
                     self.genereLabel.text = result.genres[0].name
-                    
+                    if result.voteAverage != 0 {
+                        self.voteLabel.text = String(format: "%.2f", result.voteAverage)
+                    } else {
+                        self.voteLabel.text = "0,0"
+                    }
                 }
             } catch {
                 

@@ -13,8 +13,11 @@ class TableViewCell: UITableViewCell {
     
     @IBOutlet weak var titleLabelCell: UILabel!
     @IBOutlet weak var yearLabelCell: UILabel!
-    @IBOutlet weak var descriptionLabelCell: UILabel!
+    @IBOutlet weak var originalTitleLabelCell: UILabel!
+    @IBOutlet weak var voteLabelCell: UILabel!
     @IBOutlet weak var posterImageCell: UIImageView!
+    @IBOutlet weak var genreLabelCell: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -30,9 +33,57 @@ class TableViewCell: UITableViewCell {
     // MARK: - Function push Trending database
     
     func pushTrending(data: TrendingResult) {
+        var genreString = ""
+        
+        switch data.genreIDS[0] {
+        case 28:
+            genreString = "Akcja"
+        case 12:
+            genreString = "Przygodowy"
+        case 16:
+            genreString = "Animacja"
+        case 35:
+            genreString = "Komedia"
+        case 80:
+            genreString = "Kryminał"
+        case 99:
+            genreString = "Dokumentalny"
+        case 18:
+            genreString = "Dramat"
+        case 10751:
+            genreString = "Familijny"
+        case 14:
+            genreString = "Fantasy"
+        case 36:
+            genreString = "Historyczny"
+        case 27:
+            genreString = "Horror"
+        case 10402:
+            genreString = "Muzyczny"
+        case 19648:
+            genreString = "Tajemnica"
+        case 10749:
+            genreString = "Romans"
+        case 878:
+            genreString = "Sci-Fi"
+        case 10770:
+            genreString = "film TV"
+        case 53:
+            genreString = "Thiller"
+        case 10752:
+            genreString = "Wojenny"
+        case 37:
+            genreString = "Western"
+        default:
+            genreString = ""
+        }
+        
         titleLabelCell.text = data.title
+        originalTitleLabelCell.text = data.originalTitle
         yearLabelCell.text = "\(data.releaseDate.dropLast(6))"
-        descriptionLabelCell.text = data.overview
+        voteLabelCell.text = String(format: "%.2f", data.voteAverage)
+        genreLabelCell.text = genreString
+       
         posterImageCell.downloaded(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath)")
         
         

@@ -28,7 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09E79E56C6C47E86239745FE20DBB901 /* Pods_Movist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Movist.framework; path = "Pods-Movist.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E79E56C6C47E86239745FE20DBB901 /* Pods_Movist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A431CF7D6845947CBCBD82717862648 /* Pods-Movist-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Movist-acknowledgements.plist"; sourceTree = "<group>"; };
 		0B17CDFB1AE50D7E1DA34B5D51C3B158 /* Pods-Movist-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Movist-frameworks.sh"; sourceTree = "<group>"; };
 		0E82938F032B9921BA4893C4857B09DC /* Pods-Movist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Movist.release.xcconfig"; sourceTree = "<group>"; };
@@ -37,11 +37,11 @@
 		1C0CEF2A7325D04C626544E6F71FF4E0 /* Pods-Movist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Movist.modulemap"; sourceTree = "<group>"; };
 		253E836994EC29BD6F3951255CEE6F08 /* Pods-Movist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Movist.debug.xcconfig"; sourceTree = "<group>"; };
 		3000E94EF0B139DB67820966343AC1A1 /* CircleBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CircleBar-dummy.m"; sourceTree = "<group>"; };
-		43697E92E1EF903807158F32D260C4DC /* CircleBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CircleBar.framework; path = CircleBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		43697E92E1EF903807158F32D260C4DC /* CircleBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircleBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		596B0D59E5C4C759A2A7CC1FA9FE15D0 /* CircleBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircleBar-umbrella.h"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		779406E4A446D4233AADCC66B79E16FB /* CircleBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CircleBar.modulemap; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F4D03AFA6389F3BF0D487A8156E4C85 /* Pods-Movist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Movist-dummy.m"; sourceTree = "<group>"; };
 		B69BEFF2FCE2737A29DBC9EAADD7A55E /* SHCircleBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHCircleBar.swift; path = CircleBar/Classes/SHCircleBar.swift; sourceTree = "<group>"; };
 		C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CircleBar.xcconfig; sourceTree = "<group>"; };
@@ -117,7 +117,6 @@
 				CFC35539E76904904D4F53EE44D574AE /* SHCircleBarController.swift */,
 				27ED48F7D79BB3BBB6197F81D7CAB4A1 /* Support Files */,
 			);
-			name = CircleBar;
 			path = CircleBar;
 			sourceTree = "<group>";
 		};
@@ -365,6 +364,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -401,6 +401,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";

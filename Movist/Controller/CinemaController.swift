@@ -41,7 +41,6 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         // Navigation title
         navigationItem.title = "W kinach"
         
@@ -53,6 +52,7 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         
     }
     
+
     // MARK: - Cinema Table
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

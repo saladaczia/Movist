@@ -29,12 +29,12 @@ import UIKit
         
     }
     override func draw(_ rect: CGRect) {
-        let fillColor: UIColor = .black
+        var fillColor: UIColor = .black
         tabWidth = self.bounds.width / CGFloat(self.items!.count)
         let bezPath = drawPath(for: index)
         
         bezPath.close()
-        
+        fillColor = UIColor(named: "BarColor")!
         fillColor.setFill()
         bezPath.fill()
         let mask = CAShapeLayer()

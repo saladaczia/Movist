@@ -209,6 +209,8 @@
 			dependencies = (
 			);
 			name = Movist;
+			packageProductDependencies = (
+			);
 			productName = Movist;
 			productReference = 4E01D3F628E5974D00C2D44F /* Movist.app */;
 			productType = "com.apple.product-type.application";
@@ -237,6 +239,8 @@
 				Base,
 			);
 			mainGroup = 4E01D3ED28E5974D00C2D44F;
+			packageReferences = (
+			);
 			productRefGroup = 4E01D3F728E5974D00C2D44F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -491,7 +495,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.6;
+				MARKETING_VERSION = 0.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -521,7 +525,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.2.6;
+				MARKETING_VERSION = 0.2.8;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

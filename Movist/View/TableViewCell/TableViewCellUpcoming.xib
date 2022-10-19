@@ -108,7 +108,7 @@
                 <outlet property="voteLabelCell" destination="gv1-R9-a9w" id="qWo-v1-nxY"/>
                 <outlet property="yearLabelCell" destination="Fzb-wq-7tj" id="IKA-yD-yIP"/>
             </connections>
-            <point key="canvasLocation" x="167" y="261"/>
+            <point key="canvasLocation" x="165.94202898550725" y="260.49107142857144"/>
         </tableViewCell>
     </objects>
     <resources>

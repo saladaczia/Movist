@@ -7,4 +7,5 @@ target 'Movist' do
 
   # Pods for Movist
 pod 'CircleBar'
+pod 'SimplePopUpMenu'
 end

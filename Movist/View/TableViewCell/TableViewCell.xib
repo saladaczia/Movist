@@ -114,7 +114,7 @@
     <resources>
         <image name="star" width="1003" height="955"/>
         <namedColor name="CircleColor">
-            <color red="0.96078431372549022" green="0.76862745098039209" blue="0.2627450980392157" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.96100002527236938" green="0.76899999380111694" blue="0.2630000114440918" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemGrayColor">
             <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -7,18 +7,30 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		654A1268C23BA1E25D076540C5BEC4BC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		7CCE43A9C0B6AAB932CA7400616B867D /* CircleBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 3000E94EF0B139DB67820966343AC1A1 /* CircleBar-dummy.m */; };
-		9E5927BEEC1CCC76D0399DF1F085B61E /* Pods-Movist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D03AFA6389F3BF0D487A8156E4C85 /* Pods-Movist-dummy.m */; };
-		A1196F30D39B93EF0C90774315736B04 /* Pods-Movist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F73CAF981756C585F0CDDC0666E54E08 /* Pods-Movist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DF378D1ABACF355BD352F447B3BB210D /* CircleBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 596B0D59E5C4C759A2A7CC1FA9FE15D0 /* CircleBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		089D65D24378E8A4AABE03042B2DA54C /* SimplePopUpMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5D85E8BA1D46746979EA0C67F2731F15 /* SimplePopUpMenu-dummy.m */; };
+		1FDCBAB692CBE506B6A94359256BF343 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		41F9F24EF31DD15EA6B34C2A39B601D1 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		7CCE43A9C0B6AAB932CA7400616B867D /* CircleBar-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8AF6D7DEDA8394E5B0A619F0C85B53C1 /* CircleBar-dummy.m */; };
+		9F58367221A2025876BA8A13D0D2DA45 /* PopUpMenuUIViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB77AF8EE0D9A171CD2F5897B9F02CB /* PopUpMenuUIViewControler.swift */; };
+		C38A9854F1B575C988CBF751B4D7C300 /* Pods-Movist-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F4D03AFA6389F3BF0D487A8156E4C85 /* Pods-Movist-dummy.m */; };
+		CDC213B7993E5BB71D526793F98EBF12 /* SimplePopUpMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FB61B2266D79E6F1B9A293ACCC327343 /* SimplePopUpMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D20F5D680802F2C7108C5D01DB6BE01D /* PopUpMenuStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDA368991322AA6350C16C24EEE9F2B2 /* PopUpMenuStyle.swift */; };
+		DF378D1ABACF355BD352F447B3BB210D /* CircleBar-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 349D3DD34937257C18BD43B6B849B663 /* CircleBar-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DFC5CA7AC8AA2E2B585171F42C939D63 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		F7AE75D23C11A1220C5A7AEB70B06B0C /* SHCircleBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFC35539E76904904D4F53EE44D574AE /* SHCircleBarController.swift */; };
-		FF7F5D61C7E342DB4EEA1FC67B7F96A4 /* SHCircleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69BEFF2FCE2737A29DBC9EAADD7A55E /* SHCircleBar.swift */; };
+		F7AE75D23C11A1220C5A7AEB70B06B0C /* SHCircleBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56748B4603AC26911AAE0F9BD083388E /* SHCircleBarController.swift */; };
+		FB850FF973889BCB3071110D64884B9B /* Pods-Movist-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F73CAF981756C585F0CDDC0666E54E08 /* Pods-Movist-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FF7F5D61C7E342DB4EEA1FC67B7F96A4 /* SHCircleBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = A963582E668948F45946190B650622E6 /* SHCircleBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		6539078F23CBEB8202D36D26CEFD0DAA /* PBXContainerItemProxy */ = {
+		14DAA781DBE2206510573DFCF09B6160 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5ABA3285B0B5D6937F8CA5865996F4DB;
+			remoteInfo = SimplePopUpMenu;
+		};
+		C973A071570DEBB6B8759980BB5ACD78 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
@@ -28,35 +40,52 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		09E79E56C6C47E86239745FE20DBB901 /* Pods_Movist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Movist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		09E79E56C6C47E86239745FE20DBB901 /* Pods_Movist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Movist.framework; path = "Pods-Movist.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A431CF7D6845947CBCBD82717862648 /* Pods-Movist-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Movist-acknowledgements.plist"; sourceTree = "<group>"; };
 		0B17CDFB1AE50D7E1DA34B5D51C3B158 /* Pods-Movist-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Movist-frameworks.sh"; sourceTree = "<group>"; };
 		0E82938F032B9921BA4893C4857B09DC /* Pods-Movist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Movist.release.xcconfig"; sourceTree = "<group>"; };
-		0E9E7CD2838FD9C4919640A68565036C /* CircleBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CircleBar-Info.plist"; sourceTree = "<group>"; };
-		1556F6A2276A2B0E03752C6BE696BED4 /* CircleBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircleBar-prefix.pch"; sourceTree = "<group>"; };
 		1C0CEF2A7325D04C626544E6F71FF4E0 /* Pods-Movist.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Movist.modulemap"; sourceTree = "<group>"; };
 		253E836994EC29BD6F3951255CEE6F08 /* Pods-Movist.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Movist.debug.xcconfig"; sourceTree = "<group>"; };
-		3000E94EF0B139DB67820966343AC1A1 /* CircleBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CircleBar-dummy.m"; sourceTree = "<group>"; };
-		43697E92E1EF903807158F32D260C4DC /* CircleBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CircleBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		596B0D59E5C4C759A2A7CC1FA9FE15D0 /* CircleBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircleBar-umbrella.h"; sourceTree = "<group>"; };
+		349D3DD34937257C18BD43B6B849B663 /* CircleBar-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircleBar-umbrella.h"; sourceTree = "<group>"; };
+		3EE52C252A821337306880A21F2EE7A9 /* CircleBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CircleBar.modulemap; sourceTree = "<group>"; };
+		4197F51276CBA504B0C23F4B9B2F4A1F /* CircleBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CircleBar.xcconfig; sourceTree = "<group>"; };
+		43697E92E1EF903807158F32D260C4DC /* CircleBar.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = CircleBar.framework; path = CircleBar.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		56748B4603AC26911AAE0F9BD083388E /* SHCircleBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHCircleBarController.swift; path = CircleBar/Classes/SHCircleBarController.swift; sourceTree = "<group>"; };
+		5D85E8BA1D46746979EA0C67F2731F15 /* SimplePopUpMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SimplePopUpMenu-dummy.m"; sourceTree = "<group>"; };
+		6973B3869ECB2E90861E9A7F7E680918 /* SimplePopUpMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimplePopUpMenu-prefix.pch"; sourceTree = "<group>"; };
+		70E65C25ECDAD1F780627C5C69A70BC6 /* SimplePopUpMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SimplePopUpMenu.framework; path = SimplePopUpMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		779406E4A446D4233AADCC66B79E16FB /* CircleBar.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = CircleBar.modulemap; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		7FE145972F58BA96143828E8B52FA3B5 /* SimplePopUpMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SimplePopUpMenu.modulemap; sourceTree = "<group>"; };
+		8AF6D7DEDA8394E5B0A619F0C85B53C1 /* CircleBar-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "CircleBar-dummy.m"; sourceTree = "<group>"; };
+		8BB77AF8EE0D9A171CD2F5897B9F02CB /* PopUpMenuUIViewControler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopUpMenuUIViewControler.swift; path = SimplePopUpMenu/Classes/PopUpMenuUIViewControler.swift; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		9F4D03AFA6389F3BF0D487A8156E4C85 /* Pods-Movist-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Movist-dummy.m"; sourceTree = "<group>"; };
-		B69BEFF2FCE2737A29DBC9EAADD7A55E /* SHCircleBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHCircleBar.swift; path = CircleBar/Classes/SHCircleBar.swift; sourceTree = "<group>"; };
-		C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = CircleBar.xcconfig; sourceTree = "<group>"; };
-		CFC35539E76904904D4F53EE44D574AE /* SHCircleBarController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHCircleBarController.swift; path = CircleBar/Classes/SHCircleBarController.swift; sourceTree = "<group>"; };
+		A963582E668948F45946190B650622E6 /* SHCircleBar.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SHCircleBar.swift; path = CircleBar/Classes/SHCircleBar.swift; sourceTree = "<group>"; };
+		B86A49A6FB1AC4E6DAA65043FD6B2CEC /* SimplePopUpMenu-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SimplePopUpMenu-Info.plist"; sourceTree = "<group>"; };
+		C19DD4514A23B99F115D4AB2CAD50CFB /* CircleBar-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "CircleBar-prefix.pch"; sourceTree = "<group>"; };
+		CDA368991322AA6350C16C24EEE9F2B2 /* PopUpMenuStyle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = PopUpMenuStyle.swift; path = SimplePopUpMenu/Classes/PopUpMenuStyle.swift; sourceTree = "<group>"; };
+		DE9D8EFE2F1B527B4786A95F58B36EFF /* CircleBar-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "CircleBar-Info.plist"; sourceTree = "<group>"; };
 		E54CA72F51C0F88AB9A9F2C92222C71E /* Pods-Movist-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Movist-acknowledgements.markdown"; sourceTree = "<group>"; };
+		F054A22DE7EBD6825AB0218B5C259BD8 /* SimplePopUpMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SimplePopUpMenu.xcconfig; sourceTree = "<group>"; };
 		F73CAF981756C585F0CDDC0666E54E08 /* Pods-Movist-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Movist-umbrella.h"; sourceTree = "<group>"; };
 		F81EA60A1E9A4D0C1B298DAABB07CC1F /* Pods-Movist-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Movist-Info.plist"; sourceTree = "<group>"; };
+		FB61B2266D79E6F1B9A293ACCC327343 /* SimplePopUpMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SimplePopUpMenu-umbrella.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		71D7A8FBF90FEC5442468EEDA96FA1D3 /* Frameworks */ = {
+		0D5A43FE4D7F9D310695257331CDB3F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				654A1268C23BA1E25D076540C5BEC4BC /* Foundation.framework in Frameworks */,
+				1FDCBAB692CBE506B6A94359256BF343 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		37A208C4277EAACF52AEBF992316DEDB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				41F9F24EF31DD15EA6B34C2A39B601D1 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -71,18 +100,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		27ED48F7D79BB3BBB6197F81D7CAB4A1 /* Support Files */ = {
+		1724BE34F76D26DEE0199FCA1F7FA8AA /* CircleBar */ = {
 			isa = PBXGroup;
 			children = (
-				779406E4A446D4233AADCC66B79E16FB /* CircleBar.modulemap */,
-				C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */,
-				3000E94EF0B139DB67820966343AC1A1 /* CircleBar-dummy.m */,
-				0E9E7CD2838FD9C4919640A68565036C /* CircleBar-Info.plist */,
-				1556F6A2276A2B0E03752C6BE696BED4 /* CircleBar-prefix.pch */,
-				596B0D59E5C4C759A2A7CC1FA9FE15D0 /* CircleBar-umbrella.h */,
+				A963582E668948F45946190B650622E6 /* SHCircleBar.swift */,
+				56748B4603AC26911AAE0F9BD083388E /* SHCircleBarController.swift */,
+				BC81AC9229C81E9AF09285D4E907DAE5 /* Support Files */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/CircleBar";
+			name = CircleBar;
+			path = CircleBar;
 			sourceTree = "<group>";
 		};
 		3D70C3DF86AF37370540E9516324EF64 /* Pods-Movist */ = {
@@ -102,6 +128,20 @@
 			path = "Target Support Files/Pods-Movist";
 			sourceTree = "<group>";
 		};
+		4411DC457F3E706B458AEBE937D9D33E /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				7FE145972F58BA96143828E8B52FA3B5 /* SimplePopUpMenu.modulemap */,
+				F054A22DE7EBD6825AB0218B5C259BD8 /* SimplePopUpMenu.xcconfig */,
+				5D85E8BA1D46746979EA0C67F2731F15 /* SimplePopUpMenu-dummy.m */,
+				B86A49A6FB1AC4E6DAA65043FD6B2CEC /* SimplePopUpMenu-Info.plist */,
+				6973B3869ECB2E90861E9A7F7E680918 /* SimplePopUpMenu-prefix.pch */,
+				FB61B2266D79E6F1B9A293ACCC327343 /* SimplePopUpMenu-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SimplePopUpMenu";
+			sourceTree = "<group>";
+		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,23 +150,13 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		6816B46737B4BBC41BB9E857506FE3BC /* CircleBar */ = {
+		87169733E01ADFE529AFA108A7CE1756 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				B69BEFF2FCE2737A29DBC9EAADD7A55E /* SHCircleBar.swift */,
-				CFC35539E76904904D4F53EE44D574AE /* SHCircleBarController.swift */,
-				27ED48F7D79BB3BBB6197F81D7CAB4A1 /* Support Files */,
+				1724BE34F76D26DEE0199FCA1F7FA8AA /* CircleBar */,
+				C6CED63AA1D411E56B5409F5148C74CE /* SimplePopUpMenu */,
 			);
-			path = CircleBar;
-			sourceTree = "<group>";
-		};
-		8899D952F5C234BC0F6284438F843272 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				43697E92E1EF903807158F32D260C4DC /* CircleBar.framework */,
-				09E79E56C6C47E86239745FE20DBB901 /* Pods_Movist.framework */,
-			);
-			name = Products;
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		921866458CBF994C688561116D107AED /* Targets Support Files */ = {
@@ -137,12 +167,29 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		ACEEBF83C7BD3FCB3BE04C6FCBA94CAA /* Pods */ = {
+		BC81AC9229C81E9AF09285D4E907DAE5 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6816B46737B4BBC41BB9E857506FE3BC /* CircleBar */,
+				3EE52C252A821337306880A21F2EE7A9 /* CircleBar.modulemap */,
+				4197F51276CBA504B0C23F4B9B2F4A1F /* CircleBar.xcconfig */,
+				8AF6D7DEDA8394E5B0A619F0C85B53C1 /* CircleBar-dummy.m */,
+				DE9D8EFE2F1B527B4786A95F58B36EFF /* CircleBar-Info.plist */,
+				C19DD4514A23B99F115D4AB2CAD50CFB /* CircleBar-prefix.pch */,
+				349D3DD34937257C18BD43B6B849B663 /* CircleBar-umbrella.h */,
 			);
-			name = Pods;
+			name = "Support Files";
+			path = "../Target Support Files/CircleBar";
+			sourceTree = "<group>";
+		};
+		C6CED63AA1D411E56B5409F5148C74CE /* SimplePopUpMenu */ = {
+			isa = PBXGroup;
+			children = (
+				CDA368991322AA6350C16C24EEE9F2B2 /* PopUpMenuStyle.swift */,
+				8BB77AF8EE0D9A171CD2F5897B9F02CB /* PopUpMenuUIViewControler.swift */,
+				4411DC457F3E706B458AEBE937D9D33E /* Support Files */,
+			);
+			name = SimplePopUpMenu;
+			path = SimplePopUpMenu;
 			sourceTree = "<group>";
 		};
 		CF1408CF629C7361332E53B88F7BD30C = {
@@ -150,8 +197,8 @@
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				ACEEBF83C7BD3FCB3BE04C6FCBA94CAA /* Pods */,
-				8899D952F5C234BC0F6284438F843272 /* Products */,
+				87169733E01ADFE529AFA108A7CE1756 /* Pods */,
+				D255D2167D83398C60C5D5207E2BBF39 /* Products */,
 				921866458CBF994C688561116D107AED /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -164,14 +211,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D255D2167D83398C60C5D5207E2BBF39 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				43697E92E1EF903807158F32D260C4DC /* CircleBar.framework */,
+				09E79E56C6C47E86239745FE20DBB901 /* Pods_Movist.framework */,
+				70E65C25ECDAD1F780627C5C69A70BC6 /* SimplePopUpMenu.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		0E95A81608687773368347CA530E5921 /* Headers */ = {
+		08D82C56F0493E985E874ED123E043E6 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A1196F30D39B93EF0C90774315736B04 /* Pods-Movist-umbrella.h in Headers */,
+				FB850FF973889BCB3071110D64884B9B /* Pods-Movist-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -183,22 +240,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		D96EA24E20764A6F8584B38B2F0F7A8A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDC213B7993E5BB71D526793F98EBF12 /* SimplePopUpMenu-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		69164E3D68C4B9197C1A9587E69379A4 /* Pods-Movist */ = {
+		5ABA3285B0B5D6937F8CA5865996F4DB /* SimplePopUpMenu */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 017FA7FB1E92076C780A264CFE1C0C81 /* Build configuration list for PBXNativeTarget "Pods-Movist" */;
+			buildConfigurationList = 6FDD788A6A81976D0FE3ECF5BEC397EF /* Build configuration list for PBXNativeTarget "SimplePopUpMenu" */;
 			buildPhases = (
-				0E95A81608687773368347CA530E5921 /* Headers */,
-				DB2B070405D5C9AFD59DCADB90A40D3F /* Sources */,
-				71D7A8FBF90FEC5442468EEDA96FA1D3 /* Frameworks */,
-				30D57FA366FD5997CBFA9D9D77055E94 /* Resources */,
+				D96EA24E20764A6F8584B38B2F0F7A8A /* Headers */,
+				6EE75C1955B09DD902DBE9FF19C1013C /* Sources */,
+				0D5A43FE4D7F9D310695257331CDB3F4 /* Frameworks */,
+				763A98B1BE879F181002BFA01E3AB6A5 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				7F2D4620168A729B81364508290302FD /* PBXTargetDependency */,
+			);
+			name = SimplePopUpMenu;
+			productName = SimplePopUpMenu;
+			productReference = 70E65C25ECDAD1F780627C5C69A70BC6 /* SimplePopUpMenu.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		69164E3D68C4B9197C1A9587E69379A4 /* Pods-Movist */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6A7E0BCCF819A4BA75F0955A8CF1F459 /* Build configuration list for PBXNativeTarget "Pods-Movist" */;
+			buildPhases = (
+				08D82C56F0493E985E874ED123E043E6 /* Headers */,
+				645F9D3F7700DD02E2B99700DDFD4B80 /* Sources */,
+				37A208C4277EAACF52AEBF992316DEDB /* Frameworks */,
+				81951CF6FA541E4FA7BD04BBEE5ABBB9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				329D11DC1E61F47FB7A91CE05707F72F /* PBXTargetDependency */,
+				976998CC28136F4C4AB9E3949263B03C /* PBXTargetDependency */,
 			);
 			name = "Pods-Movist";
 			productName = "Pods-Movist";
@@ -241,18 +325,19 @@
 				Base,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 8899D952F5C234BC0F6284438F843272 /* Products */;
+			productRefGroup = D255D2167D83398C60C5D5207E2BBF39 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				B7378E43393E401083784252E88810C0 /* CircleBar */,
 				69164E3D68C4B9197C1A9587E69379A4 /* Pods-Movist */,
+				5ABA3285B0B5D6937F8CA5865996F4DB /* SimplePopUpMenu */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		30D57FA366FD5997CBFA9D9D77055E94 /* Resources */ = {
+		763A98B1BE879F181002BFA01E3AB6A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -260,6 +345,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		7FB422C6E795506AAD6CA282CAA2D116 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		81951CF6FA541E4FA7BD04BBEE5ABBB9 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -279,22 +371,38 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		DB2B070405D5C9AFD59DCADB90A40D3F /* Sources */ = {
+		645F9D3F7700DD02E2B99700DDFD4B80 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9E5927BEEC1CCC76D0399DF1F085B61E /* Pods-Movist-dummy.m in Sources */,
+				C38A9854F1B575C988CBF751B4D7C300 /* Pods-Movist-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6EE75C1955B09DD902DBE9FF19C1013C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D20F5D680802F2C7108C5D01DB6BE01D /* PopUpMenuStyle.swift in Sources */,
+				9F58367221A2025876BA8A13D0D2DA45 /* PopUpMenuUIViewControler.swift in Sources */,
+				089D65D24378E8A4AABE03042B2DA54C /* SimplePopUpMenu-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		7F2D4620168A729B81364508290302FD /* PBXTargetDependency */ = {
+		329D11DC1E61F47FB7A91CE05707F72F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = CircleBar;
 			target = B7378E43393E401083784252E88810C0 /* CircleBar */;
-			targetProxy = 6539078F23CBEB8202D36D26CEFD0DAA /* PBXContainerItemProxy */;
+			targetProxy = C973A071570DEBB6B8759980BB5ACD78 /* PBXContainerItemProxy */;
+		};
+		976998CC28136F4C4AB9E3949263B03C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SimplePopUpMenu;
+			target = 5ABA3285B0B5D6937F8CA5865996F4DB /* SimplePopUpMenu */;
+			targetProxy = 14DAA781DBE2206510573DFCF09B6160 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -360,11 +468,85 @@
 			};
 			name = Release;
 		};
+		21E09ACB3E1526E514619DB46B43E5C1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 253E836994EC29BD6F3951255CEE6F08 /* Pods-Movist.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Movist/Pods-Movist-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Movist/Pods-Movist.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		2923DB58386530C0141A1352D858DACF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E82938F032B9921BA4893C4857B09DC /* Pods-Movist.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Movist/Pods-Movist-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Movist/Pods-Movist.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
 		2C68C4BDC03962368D0C638B41FB84F6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */;
+			baseConfigurationReference = 4197F51276CBA504B0C23F4B9B2F4A1F /* CircleBar.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -399,9 +581,8 @@
 		};
 		3CB29705876F5DE532E15DF7FF65B89D /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C4491023FBC96513B1F7C5E60BA94081 /* CircleBar.xcconfig */;
+			baseConfigurationReference = 4197F51276CBA504B0C23F4B9B2F4A1F /* CircleBar.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -427,43 +608,6 @@
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		4AD99015CF96CA34925A7F70661BB1FF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 253E836994EC29BD6F3951255CEE6F08 /* Pods-Movist.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Movist/Pods-Movist-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Movist/Pods-Movist.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -535,12 +679,10 @@
 			};
 			name = Debug;
 		};
-		EC1B7003F54889D10B890930F7812D1C /* Release */ = {
+		9475BBC0BEE1C77F98E34F6DB6DC0CBF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0E82938F032B9921BA4893C4857B09DC /* Pods-Movist.release.xcconfig */;
+			baseConfigurationReference = F054A22DE7EBD6825AB0218B5C259BD8 /* SimplePopUpMenu.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
@@ -549,23 +691,56 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-Movist/Pods-Movist-Info.plist";
+				GCC_PREFIX_HEADER = "Target Support Files/SimplePopUpMenu/SimplePopUpMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimplePopUpMenu/SimplePopUpMenu-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Movist/Pods-Movist.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				MODULEMAP_FILE = "Target Support Files/SimplePopUpMenu/SimplePopUpMenu.modulemap";
+				PRODUCT_MODULE_NAME = SimplePopUpMenu;
+				PRODUCT_NAME = SimplePopUpMenu;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		B803BCEF4A64F9471228E602BE7072A6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = F054A22DE7EBD6825AB0218B5C259BD8 /* SimplePopUpMenu.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/SimplePopUpMenu/SimplePopUpMenu-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/SimplePopUpMenu/SimplePopUpMenu-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MODULEMAP_FILE = "Target Support Files/SimplePopUpMenu/SimplePopUpMenu.modulemap";
+				PRODUCT_MODULE_NAME = SimplePopUpMenu;
+				PRODUCT_NAME = SimplePopUpMenu;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -576,15 +751,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		017FA7FB1E92076C780A264CFE1C0C81 /* Build configuration list for PBXNativeTarget "Pods-Movist" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4AD99015CF96CA34925A7F70661BB1FF /* Debug */,
-				EC1B7003F54889D10B890930F7812D1C /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		0D6E0DC73A4DFBF30C70A7DFE2707E71 /* Build configuration list for PBXNativeTarget "CircleBar" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -599,6 +765,24 @@
 			buildConfigurations = (
 				7290392BDDDC8699D9F13E731E8A9A4E /* Debug */,
 				0EB78948398F70E6E0EEC1B92476859B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6A7E0BCCF819A4BA75F0955A8CF1F459 /* Build configuration list for PBXNativeTarget "Pods-Movist" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				21E09ACB3E1526E514619DB46B43E5C1 /* Debug */,
+				2923DB58386530C0141A1352D858DACF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6FDD788A6A81976D0FE3ECF5BEC397EF /* Build configuration list for PBXNativeTarget "SimplePopUpMenu" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9475BBC0BEE1C77F98E34F6DB6DC0CBF /* Debug */,
+				B803BCEF4A64F9471228E602BE7072A6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

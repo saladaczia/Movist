@@ -42,6 +42,8 @@ class DetailsController: UIViewController{
     @IBOutlet weak var conTrailer: NSLayoutConstraint!
     @IBOutlet weak var voteLabel: UILabel!
     
+    @IBOutlet weak var starImage: UIImageView!
+    @IBOutlet weak var streamingLabel: UILabel!
     
     
     // MARK: - Actions
@@ -84,9 +86,10 @@ class DetailsController: UIViewController{
                     self.titleLabel.text = result.title
                     self.yearLabel.text = "\(result.releaseDate.dropLast(6)) | \(result.runtime)min"
                     self.descriptionLabel.text = result.overview
+                    self.starImage.isHidden = false
                     self.genereLabel.text = result.genres[0].name
                     if result.voteAverage != 0 {
-                        self.voteLabel.text = String(format: "%.2f", result.voteAverage)
+                        self.voteLabel.text = String(format: "%.1f", result.voteAverage)
                     } else {
                         self.voteLabel.text = "0,0"
                     }
@@ -112,6 +115,7 @@ class DetailsController: UIViewController{
                         self.trailerLabel.isHidden = true
                         self.conTrailer.constant = 0
                     } else {
+                        self.trailerLabel.isHidden = false
                         self.movieTrailerUrl = result.results[0].key
                     }
                        
@@ -154,11 +158,13 @@ class DetailsController: UIViewController{
                         if self.providerTable.contains("Netflix") {
                             self.StreamigOne.image = UIImage(named: "Netflix")
                             self.conOne.constant = 48
+                            self.streamingLabel.isHidden = false
                         }
                     
                         if self.providerTable.contains("Horizon") {
                             self.StreamingTwo.image = UIImage(named: "Horizon")
                             self.conTwo.constant = 48
+                            self.streamingLabel.isHidden = false
                             if self.providerTable.count > 1 {
                             self.spaceTwo.constant = 8
                             }
@@ -167,6 +173,7 @@ class DetailsController: UIViewController{
                         if self.providerTable.contains("HBO Max") {
                             self.StreamingThree.image = UIImage(named: "HBO Max")
                             self.conThree.constant = 48
+                            self.streamingLabel.isHidden = false
                             if self.providerTable.count > 1 {
                             self.spaceThree.constant = 8
                             }
@@ -174,6 +181,7 @@ class DetailsController: UIViewController{
                         if self.providerTable.contains("Disney Plus") {
                             self.StreamingFour.image = UIImage(named: "Disney Plus")
                             self.conFour.constant = 48
+                            self.streamingLabel.isHidden = false
                             if self.providerTable.count > 1 {
                             self.spaceFour.constant = 8
                             }
@@ -181,6 +189,7 @@ class DetailsController: UIViewController{
                         if self.providerTable.contains("Apple TV Plus") {
                             self.StreamingFive.image = UIImage(named: "Apple TV Plus")
                             self.conFive.constant = 48
+                            self.streamingLabel.isHidden = false
                             if self.providerTable.count > 1 {
                             self.spaceFive.constant = 8
                             }
@@ -188,6 +197,7 @@ class DetailsController: UIViewController{
                         if self.providerTable.contains("Player") {
                             self.StreamingSix.image = UIImage(named: "Player")
                             self.conSix.constant = 48
+                            self.streamingLabel.isHidden = false
                             if self.providerTable.count > 1 {
                             self.spaceSix.constant = 8
                             }
@@ -210,6 +220,8 @@ class DetailsController: UIViewController{
         let backButton = UIBarButtonItem()
         backButton.title = movieTitle
         backButton.tintColor = UIColor.white
+        
+        
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
         // Setings Images

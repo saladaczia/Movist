@@ -18,7 +18,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     var upcomingIdNum = 0
     var titleMovie = ""
     var upcomingList = [UpcomingResult]()
-    let url = URL(string: "https://api.themoviedb.org/3/movie/upcoming?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&page=1&region=PL")
+    let url = URL(string: "https://api.themoviedb.org/3/movie/top_rated?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&page=1&region=PL")
     
     // MARK: - Function Upcoming database
     
@@ -43,7 +43,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         super.viewDidLoad()
         
         // Navigation title
-        navigationItem.title = "Premiery"
+        navigationItem.title = "Top filmy"
         
         // UINib table
         upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
@@ -69,7 +69,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         
         print(upcomingList[indexPath.row].id)
         self.upcomingIdNum = upcomingList[indexPath.row].id
-        self.titleMovie = upcomingList[indexPath.row].title
+        self.titleMovie = upcomingList[indexPath.row].title!
         
         self.performSegue(withIdentifier: "goToDetailsFromUpcoming", sender: self)
         tableView.deselectRow(at: indexPath, animated: true)

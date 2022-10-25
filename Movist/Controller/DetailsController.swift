@@ -42,6 +42,8 @@ class DetailsController: UIViewController{
     @IBOutlet weak var trailerLabel: UIButton!
     @IBOutlet weak var conTrailer: NSLayoutConstraint!
     @IBOutlet weak var voteLabel: UILabel!
+    @IBOutlet weak var originalTitleLabel: UILabel!
+    
     
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var streamingLabel: UILabel!
@@ -90,6 +92,7 @@ class DetailsController: UIViewController{
                         self.backdropImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.backdropPath)")
                         self.posterImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.posterPath)")
                         self.titleLabel.text = result.title
+                        self.originalTitleLabel.text = result.originalTitle
                         self.yearLabel.text = "\(result.genres[0].name) | \(result.releaseDate.dropLast(6)) | \(result.runtime)min"
                         self.descriptionLabel.text = result.overview
                         self.starImage.isHidden = false

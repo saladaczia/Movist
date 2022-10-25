@@ -21,9 +21,56 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         result.selectedBackgroundColor = UIColor(named: "CircleColor")!.withAlphaComponent(0.1)
            return result
        }()
-    
+    var yearString = "2022"
+    var genreInt = 28
     @IBOutlet weak var cinemaTable: UITableView!
     @IBOutlet weak var genresLabel: UIBarButtonItem!
+    @IBOutlet weak var yearLabel: UIBarButtonItem!
+    
+    @IBAction func yearButton(_ sender: Any) {
+        let popUpMenu:PopUpMenuUIViewControler = PopUpMenuUIViewControler()
+           popUpMenu.style = myCustomPopUpStyle
+           let items:[PopUpMenuItem] = [
+            PopUpMenuItem(title: "2022"),
+            PopUpMenuItem(title: "2021"),
+            PopUpMenuItem(title: "2020"),
+            PopUpMenuItem(title: "2019"),
+            PopUpMenuItem(title: "2018"),
+            PopUpMenuItem(title: "2017"),
+            PopUpMenuItem(title: "2016"),
+            PopUpMenuItem(title: "2015"),
+            PopUpMenuItem(title: "2014"),
+            PopUpMenuItem(title: "2013"),
+            PopUpMenuItem(title: "2012"),
+            PopUpMenuItem(title: "2011"),
+            PopUpMenuItem(title: "2010"),
+            PopUpMenuItem(title: "2009"),
+            PopUpMenuItem(title: "2008"),
+            PopUpMenuItem(title: "2007"),
+            PopUpMenuItem(title: "2006"),
+            PopUpMenuItem(title: "2005"),
+            PopUpMenuItem(title: "2004"),
+            PopUpMenuItem(title: "2003"),
+            PopUpMenuItem(title: "2002"),
+            PopUpMenuItem(title: "2001"),
+            PopUpMenuItem(title: "2000")
+              ]
+           popUpMenu.showMenu(menuIdentifier: "menu1", viewController: self, items: items, sourceView: sender,permittedArrowDirections: .any)
+            
+           popUpMenu.setHandler { (selectedMenuIndex) in
+               DispatchQueue.main.async {
+                   self.yearString = items[selectedMenuIndex].title
+                   
+                   self.yearLabel.title = items[selectedMenuIndex].title
+                   self.getCinema()
+                   
+               }
+               
+               
+              
+               
+            }
+    }
     @IBAction func genreButton(_ sender: Any) {
         
         let popUpMenu:PopUpMenuUIViewControler = PopUpMenuUIViewControler()
@@ -57,45 +104,65 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
                
                switch selectedGenere {
                case "Akcja":
-                   self.getCinema(genereNumber: 28)
+                   self.genreInt = 28
+                   self.getCinema()
                case "Przygodowy":
-                   self.getCinema(genereNumber: 12)
+                   self.genreInt = 12
+                   self.getCinema()
                case "Animacja":
-                   self.getCinema(genereNumber: 16)
+                   self.genreInt = 16
+                   self.getCinema()
                case "Komedia":
-                   self.getCinema(genereNumber: 35)
+                   self.genreInt = 35
+                   self.getCinema()
                case "Kryminał":
-                   self.getCinema(genereNumber: 80)
+                   self.genreInt = 80
+                   self.getCinema()
                case "Dokumentalny":
-                   self.getCinema(genereNumber: 99)
+                   self.genreInt = 99
+                   self.getCinema()
                case "Dramat":
-                   self.getCinema(genereNumber: 18)
+                   self.genreInt = 18
+                   self.getCinema()
                case "Familijny":
-                   self.getCinema(genereNumber: 10751)
+                   self.genreInt = 10751
+                   self.getCinema()
                case "Fantasy":
-                   self.getCinema(genereNumber: 14)
+                   self.genreInt = 14
+                   self.getCinema()
                case "Historyczny":
-                   self.getCinema(genereNumber: 36)
+                   self.genreInt = 36
+                   self.getCinema()
                case "Horror":
-                   self.getCinema(genereNumber: 27)
+                   self.genreInt = 27
+                   self.getCinema()
                case "Muzyczny":
-                   self.getCinema(genereNumber: 10402)
+                   self.genreInt = 10402
+                   self.getCinema()
                case "Tajemnica":
-                   self.getCinema(genereNumber: 19648)
+                   self.genreInt = 19648
+                   self.getCinema()
                case "Romans":
-                   self.getCinema(genereNumber: 10749)
+                   self.genreInt = 10749
+                   self.getCinema()
                case "Sci-Fi":
-                   self.getCinema(genereNumber: 878)
+                   self.genreInt = 878
+                   self.getCinema()
                case "film TV":
-                   self.getCinema(genereNumber: 10770)
+                   self.genreInt = 10770
+                   self.getCinema()
                case "Thiller":
-                   self.getCinema(genereNumber: 53)
+                   self.genreInt = 53
+                   self.getCinema()
                case "Wojenny":
-                   self.getCinema(genereNumber: 10752)
+                   self.genreInt = 10752
+                   self.getCinema()
                case "Western":
-                   self.getCinema(genereNumber: 37)
+                   self.genreInt = 37
+                   self.getCinema()
                default:
-                   self.getCinema(genereNumber: 28)
+                   self.genreInt = 28
+                   self.getCinema()
                }
                
             }
@@ -110,19 +177,22 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     
     // MARK: - Function Cinema database
     
-    func getCinema(genereNumber: Int) {
+    func getCinema() {
         
-        let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&with_genres=\(String(genereNumber))&with_watch_monetization_types=flatrate")
+        let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&year=\(yearString)&with_genres=\(String(self.genreInt))&with_watch_monetization_types=flatrate")
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
-                let result = try JSONDecoder().decode(CinemaSchema.self, from: data!)
-                DispatchQueue.main.async {
-                    self.cinemaList = result.results
-                    self.cinemaTable.reloadData()
+                if let safeData = data {
+                    let result = try JSONDecoder().decode(CinemaSchema.self, from: safeData)
+                    DispatchQueue.main.async {
+                        self.cinemaList = result.results
+                        self.cinemaTable.reloadData()
+                    }
                 }
-            } catch {
                 
+            } catch {
+                print("error")
             }
         }.resume()
     }
@@ -138,7 +208,7 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         cinemaTable.register(UINib(nibName: "TableViewCellCinema", bundle: nil), forCellReuseIdentifier: "cellCinema")
         
         // Init movies database
-        getCinema(genereNumber: 28)
+        getCinema()
         
     }
     

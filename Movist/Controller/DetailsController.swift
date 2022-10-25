@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import NVActivityIndicatorView
 
 class DetailsController: UIViewController{
     
@@ -45,6 +46,9 @@ class DetailsController: UIViewController{
     @IBOutlet weak var starImage: UIImageView!
     @IBOutlet weak var streamingLabel: UILabel!
     
+    @IBOutlet weak var loadingView: NVActivityIndicatorView!
+
+    
     
     // MARK: - Actions
     @IBAction func watchTrailer(_ sender: Any) {
@@ -79,22 +83,29 @@ class DetailsController: UIViewController{
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
-                let result = try JSONDecoder().decode(DetailSchema.self, from: data!)
-                DispatchQueue.main.async {
-                    self.backdropImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.backdropPath)")
-                    self.posterImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.posterPath)")
-                    self.titleLabel.text = result.title
-                    self.yearLabel.text = "\(result.releaseDate.dropLast(6)) | \(result.runtime)min"
-                    self.descriptionLabel.text = result.overview
-                    self.starImage.isHidden = false
-                    self.genereLabel.text = result.genres[0].name
-                    if result.voteAverage != 0 {
-                        self.voteLabel.text = String(format: "%.1f", result.voteAverage)
-                    } else {
-                        self.voteLabel.text = "0,0"
+                if let safeData = data {
+                let result = try JSONDecoder().decode(DetailSchema.self, from: safeData)
+                    DispatchQueue.main.async {
+                        self.backdropImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.backdropPath)")
+                        self.posterImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.posterPath)")
+                        self.titleLabel.text = result.title
+                        self.yearLabel.text = "\(result.genres[0].name) | \(result.releaseDate.dropLast(6)) | \(result.runtime)min"
+                        self.descriptionLabel.text = result.overview
+                        self.starImage.isHidden = false
+                        
+                        if result.voteAverage != 0 {
+                            self.voteLabel.text = String(format: "%.1f", result.voteAverage)
+                        } else {
+                            self.voteLabel.text = "0,0"
+                        }
                     }
                 }
+                
             } catch {
+                return
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                self.loadingView.stopAnimating()
                 
             }
         }.resume()
@@ -108,21 +119,25 @@ class DetailsController: UIViewController{
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
-                let result = try JSONDecoder().decode(VideoSchema.self, from: data!)
-                DispatchQueue.main.async {
-                    
-                    if result.results.isEmpty {
-                        self.trailerLabel.isHidden = true
-                        self.conTrailer.constant = 0
-                    } else {
-                        self.trailerLabel.isHidden = false
-                        self.movieTrailerUrl = result.results[0].key
+                if let safeData = data {
+                    let result = try JSONDecoder().decode(VideoSchema.self, from: safeData)
+                    DispatchQueue.main.async {
+                        
+                        if result.results.isEmpty {
+                            self.trailerLabel.isHidden = true
+                            self.conTrailer.constant = 0
+                        } else {
+                            self.trailerLabel.isHidden = false
+                            self.movieTrailerUrl = result.results[0].key
+                        }
+                           
                     }
-                       
                 }
+                
             } catch {
                 print("error")
             }
+            
         }.resume()
     }
     
@@ -135,86 +150,95 @@ class DetailsController: UIViewController{
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
-                let result = try JSONDecoder().decode(StreamingSchema.self, from: data!)
-                DispatchQueue.main.async {
-                    var myNumber = 0
-                    if result.results.pl.flatrate?.count != nil {
-                        myNumber = result.results.pl.flatrate!.count - 1
-                    } else {
-                        print("error")
-                    }
-                    
-                    
-                    for number in 0...myNumber {
+                if let safeData = data {
+                    let result = try JSONDecoder().decode(StreamingSchema.self, from: safeData)
+                    DispatchQueue.main.async {
+                        var myNumber = 0
                         if result.results.pl.flatrate?.count != nil {
-                        self.providerTable.append(result.results.pl.flatrate![number].providerName)
+                            myNumber = result.results.pl.flatrate!.count - 1
                         } else {
                             print("error")
-                            
                         }
-                }
-                   
-                    
-                        if self.providerTable.contains("Netflix") {
-                            self.StreamigOne.image = UIImage(named: "Netflix")
-                            self.conOne.constant = 48
-                            self.streamingLabel.isHidden = false
-                        }
-                    
-                        if self.providerTable.contains("Horizon") {
-                            self.StreamingTwo.image = UIImage(named: "Horizon")
-                            self.conTwo.constant = 48
-                            self.streamingLabel.isHidden = false
-                            if self.providerTable.count > 1 {
-                            self.spaceTwo.constant = 8
+                        
+                        
+                        for number in 0...myNumber {
+                            if result.results.pl.flatrate?.count != nil {
+                            self.providerTable.append(result.results.pl.flatrate![number].providerName)
+                            } else {
+                                print("error")
+                                
                             }
+                    }
+                       
+                        
+                            if self.providerTable.contains("Netflix") {
+                                self.StreamigOne.image = UIImage(named: "Netflix")
+                                self.conOne.constant = 48
+                                self.streamingLabel.isHidden = false
                             }
                         
-                        if self.providerTable.contains("HBO Max") {
-                            self.StreamingThree.image = UIImage(named: "HBO Max")
-                            self.conThree.constant = 48
-                            self.streamingLabel.isHidden = false
-                            if self.providerTable.count > 1 {
-                            self.spaceThree.constant = 8
+                            if self.providerTable.contains("Horizon") {
+                                self.StreamingTwo.image = UIImage(named: "Horizon")
+                                self.conTwo.constant = 48
+                                self.streamingLabel.isHidden = false
+                                if self.providerTable.count > 1 {
+                                self.spaceTwo.constant = 8
+                                }
+                                }
+                            
+                            if self.providerTable.contains("HBO Max") {
+                                self.StreamingThree.image = UIImage(named: "HBO Max")
+                                self.conThree.constant = 48
+                                self.streamingLabel.isHidden = false
+                                if self.providerTable.count > 1 {
+                                self.spaceThree.constant = 8
+                                }
                             }
-                        }
-                        if self.providerTable.contains("Disney Plus") {
-                            self.StreamingFour.image = UIImage(named: "Disney Plus")
-                            self.conFour.constant = 48
-                            self.streamingLabel.isHidden = false
-                            if self.providerTable.count > 1 {
-                            self.spaceFour.constant = 8
+                            if self.providerTable.contains("Disney Plus") {
+                                self.StreamingFour.image = UIImage(named: "Disney Plus")
+                                self.conFour.constant = 48
+                                self.streamingLabel.isHidden = false
+                                if self.providerTable.count > 1 {
+                                self.spaceFour.constant = 8
+                                }
                             }
-                        }
-                        if self.providerTable.contains("Apple TV Plus") {
-                            self.StreamingFive.image = UIImage(named: "Apple TV Plus")
-                            self.conFive.constant = 48
-                            self.streamingLabel.isHidden = false
-                            if self.providerTable.count > 1 {
-                            self.spaceFive.constant = 8
+                            if self.providerTable.contains("Apple TV Plus") {
+                                self.StreamingFive.image = UIImage(named: "Apple TV Plus")
+                                self.conFive.constant = 48
+                                self.streamingLabel.isHidden = false
+                                if self.providerTable.count > 1 {
+                                self.spaceFive.constant = 8
+                                }
                             }
-                        }
-                        if self.providerTable.contains("Player") {
-                            self.StreamingSix.image = UIImage(named: "Player")
-                            self.conSix.constant = 48
-                            self.streamingLabel.isHidden = false
-                            if self.providerTable.count > 1 {
-                            self.spaceSix.constant = 8
+                            if self.providerTable.contains("Player") {
+                                self.StreamingSix.image = UIImage(named: "Player")
+                                self.conSix.constant = 48
+                                self.streamingLabel.isHidden = false
+                                if self.providerTable.count > 1 {
+                                self.spaceSix.constant = 8
+                                }
                             }
-                        }
-                    
-                    
+                        
+                        
+                    }
                 }
+                
             } catch {
+                
                 print("error")
             }
+           
         }.resume()
-        
     }
     
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
+        
+        loadingView.isHidden = false
+        loadingView.type = .ballBeat
+        loadingView.startAnimating()
+        
         
         // Setings Back button in Navigation Bar
         let backButton = UIBarButtonItem()

@@ -1,0 +1,6 @@
+framework module SimplePopUpMenu {
+  umbrella header "SimplePopUpMenu-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -26,15 +26,19 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     
     func getTrending() {
         URLSession.shared.dataTask(with: url!) {
-            (data,req,error) in
+            (data,response,error) in
+        
             do {
-                let result = try JSONDecoder().decode(TrendingSchema.self, from: data!)
-                DispatchQueue.main.async {
-                    self.trendingList = result.results
-                    self.trendingTable.reloadData()
-                }
-            } catch {
+                if let safeData = data {
+                    let result = try JSONDecoder().decode(TrendingSchema.self, from: safeData)
+                    DispatchQueue.main.async {
+                        self.trendingList = result.results
+                        self.trendingTable.reloadData()
+                    }
+                } 
                 
+            } catch {
+                print("error")
             }
         }.resume()
     }

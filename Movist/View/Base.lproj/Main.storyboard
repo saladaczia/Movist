@@ -240,6 +240,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dc5-OO-24d" customClass="NVActivityIndicatorView" customModule="NVActivityIndicatorView">
+                                <rect key="frame" x="157" y="398" width="100" height="100"/>
+                                <color key="backgroundColor" name="CircleColor"/>
+                                <color key="tintColor" name="CircleColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="ZbD-to-E2u"/>
+                                    <constraint firstAttribute="width" constant="100" id="nNu-gm-dO3"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" name="CircleColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="zNd-QL-8rP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -254,6 +268,7 @@
                             <constraint firstItem="QQk-3i-4ex" firstAttribute="leading" secondItem="Hch-SA-erR" secondAttribute="trailing" constant="19" id="GWw-hG-EbA"/>
                             <constraint firstItem="ahP-gm-l6B" firstAttribute="top" secondItem="2Nx-Zr-crR" secondAttribute="bottom" constant="4" id="HLi-4z-bwb"/>
                             <constraint firstItem="dLa-Aj-3mc" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7" id="Hct-fB-Bpe"/>
+                            <constraint firstItem="dc5-OO-24d" firstAttribute="centerY" secondItem="8bk-E9-7cn" secondAttribute="centerY" id="IxU-Sy-gWT"/>
                             <constraint firstItem="Wt2-vI-XsT" firstAttribute="leading" secondItem="8bk-E9-7cn" secondAttribute="leading" id="JSc-Et-xEd"/>
                             <constraint firstItem="Q8M-m4-tMG" firstAttribute="leading" secondItem="zNd-QL-8rP" secondAttribute="leading" constant="20" id="JWO-ET-TO3"/>
                             <constraint firstItem="dLa-Aj-3mc" firstAttribute="leading" secondItem="J4l-Fr-XcH" secondAttribute="trailing" id="Jzc-rf-s0c"/>
@@ -277,6 +292,7 @@
                             <constraint firstItem="zNd-QL-8rP" firstAttribute="trailing" secondItem="WX8-rm-dgp" secondAttribute="trailing" constant="20" id="ff6-QB-H7M"/>
                             <constraint firstItem="rFM-Hf-ctu" firstAttribute="top" secondItem="Q8M-m4-tMG" secondAttribute="bottom" constant="7" id="fwu-EO-juk"/>
                             <constraint firstItem="QQk-3i-4ex" firstAttribute="top" secondItem="igq-UI-ruB" secondAttribute="bottom" constant="4" id="ikJ-ou-YgH"/>
+                            <constraint firstItem="dc5-OO-24d" firstAttribute="centerX" secondItem="8bk-E9-7cn" secondAttribute="centerX" id="mPW-4g-VnF"/>
                             <constraint firstItem="WX8-rm-dgp" firstAttribute="leading" secondItem="zNd-QL-8rP" secondAttribute="leading" constant="20" id="ncM-ue-DXm"/>
                             <constraint firstItem="tT8-xm-fsr" firstAttribute="top" secondItem="WX8-rm-dgp" secondAttribute="bottom" constant="20" id="nnb-l2-qZf"/>
                             <constraint firstItem="igq-UI-ruB" firstAttribute="top" secondItem="ahP-gm-l6B" secondAttribute="bottom" constant="4" id="oUf-1p-V1y"/>
@@ -304,6 +320,7 @@
                         <outlet property="conTwo" destination="NuE-16-Gnh" id="nhB-5d-fCd"/>
                         <outlet property="descriptionLabel" destination="WX8-rm-dgp" id="RWG-VB-pzw"/>
                         <outlet property="genereLabel" destination="QQk-3i-4ex" id="DgW-Uo-L7U"/>
+                        <outlet property="loadingView" destination="dc5-OO-24d" id="9nm-2e-OKN"/>
                         <outlet property="posterImage" destination="Hch-SA-erR" id="PUO-iU-SMH"/>
                         <outlet property="spaceFive" destination="Bsx-Oo-rS1" id="WI7-Kh-Eny"/>
                         <outlet property="spaceFour" destination="Jzc-rf-s0c" id="iof-Zu-2AH"/>

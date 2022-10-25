@@ -26,13 +26,16 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
-                let result = try JSONDecoder().decode(UpcomingSchema.self, from: data!)
-                DispatchQueue.main.async {
-                    self.upcomingList = result.results
-                    self.upcomingTable.reloadData()
+                if let safeData = data {
+                    let result = try JSONDecoder().decode(UpcomingSchema.self, from: safeData)
+                    DispatchQueue.main.async {
+                        self.upcomingList = result.results
+                        self.upcomingTable.reloadData()
+                    }
                 }
-            } catch {
                 
+            } catch {
+                print("error")
             }
         }.resume()
     }

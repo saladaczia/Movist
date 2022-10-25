@@ -22,41 +22,39 @@ struct TrendingSchema: Codable {
 
 // MARK: - Result
 struct TrendingResult: Codable {
-    let adult: Bool
-    let backdropPath: String
+    
+    
     let id: Int
     let title: String
-    let originalLanguage: TrendingOriginalLanguage
-    let originalTitle, overview, posterPath: String
-    let mediaType: TrendingMediaType
+    
+    let originalTitle, posterPath: String
+    
     let genreIDS: [Int]
-    let popularity: Double
+    
     let releaseDate: String
-    let video: Bool
+    
     let voteAverage: Double
-    let voteCount: Int
+    
 
     enum CodingKeys: String, CodingKey {
-        case adult
-        case backdropPath = "backdrop_path"
+        
+        
         case id, title
-        case originalLanguage = "original_language"
+        
         case originalTitle = "original_title"
-        case overview
+       
         case posterPath = "poster_path"
-        case mediaType = "media_type"
+        
         case genreIDS = "genre_ids"
-        case popularity
+        
         case releaseDate = "release_date"
-        case video
+        
         case voteAverage = "vote_average"
-        case voteCount = "vote_count"
+        
     }
 }
 
-enum TrendingMediaType: String, Codable {
-    case movie = "movie"
-}
+
 
 enum TrendingOriginalLanguage: String, Codable {
     case en = "en"

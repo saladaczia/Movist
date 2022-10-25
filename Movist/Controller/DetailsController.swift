@@ -47,7 +47,8 @@ class DetailsController: UIViewController{
     @IBOutlet weak var streamingLabel: UILabel!
     
     @IBOutlet weak var loadingView: NVActivityIndicatorView!
-
+    @IBOutlet weak var LoadingBack: UIView!
+    
     
     
     // MARK: - Actions
@@ -98,17 +99,20 @@ class DetailsController: UIViewController{
                         } else {
                             self.voteLabel.text = "0,0"
                         }
+                        
+
+                    }
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        self.loadingView.stopAnimating()
+                        self.LoadingBack.isHidden = true
                     }
                 }
                 
             } catch {
                 return
             }
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                self.loadingView.stopAnimating()
-                
-            }
-        }.resume()
+            
+                    }.resume()
     }
     
     // MARK: - Function get url trailer
@@ -234,7 +238,7 @@ class DetailsController: UIViewController{
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
-        
+        LoadingBack.isHidden = false
         loadingView.isHidden = false
         loadingView.type = .ballBeat
         loadingView.startAnimating()
@@ -248,11 +252,7 @@ class DetailsController: UIViewController{
         
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
         
-        // Setings Images
-        posterImage.layer.borderColor = UIColor(named: "ColorImage")?.cgColor
-        posterImage.layer.masksToBounds = true
-        posterImage.contentMode = .scaleToFill
-        posterImage.layer.borderWidth = 5
+       
         
         // init functions
         getDetails()

@@ -238,6 +238,7 @@ class DetailsController: UIViewController{
     // MARK: - ViewDidLoad
     
     override func viewDidLoad() {
+        
         LoadingBack.isHidden = false
         loadingView.isHidden = false
         loadingView.type = .ballBeat

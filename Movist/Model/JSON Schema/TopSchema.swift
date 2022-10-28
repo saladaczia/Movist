@@ -5,17 +5,13 @@
 //  Created by Maciej Sołoducha on 30/09/2022.
 //
 
-// This file was generated from JSON Schema using quicktype, do not modify it directly.
-// To parse the JSON, add this file to your project and do:
-//
-//   let cinemaSchema = try? newJSONDecoder().decode(CinemaSchema.self, from: jsonData)
 
 import Foundation
 
-// MARK: - CinemaSchema
-struct CinemaSchema: Codable {
+// MARK: - TopSchema
+struct TopSchema: Codable {
     let page: Int
-    let results: [CinemaResult]
+    let results: [TopResult]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -26,7 +22,7 @@ struct CinemaSchema: Codable {
 }
 
 // MARK: - Result
-struct CinemaResult: Codable {
+struct TopResult: Codable {
     
    
     let genreIDS: [Int]

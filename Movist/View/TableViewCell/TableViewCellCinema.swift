@@ -31,7 +31,7 @@ class TableViewCellCinema: UITableViewCell {
     
     // MARK: - Function push Cinema database
     
-    func pushCinema(data: CinemaResult) {
+    func pushCinema(data: TopResult) {
         var genreString = ""
         if data.genreIDS != [] {
             switch data.genreIDS[0] {

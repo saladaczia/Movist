@@ -8,7 +8,7 @@
 import UIKit
 import SimplePopUpMenu
 
-class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate{
+class TopController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
     // MARK: - Outlets
     let myCustomPopUpStyle:PopUpMenuStyle = {
@@ -171,7 +171,7 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     
     var cinemaIdNum = 0
     var titleMovie = ""
-    var cinemaList = [CinemaResult]()
+    var cinemaList = [TopResult]()
     
     
     // MARK: - Function Cinema Session and JSON Decode
@@ -182,7 +182,7 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
             (data,req,error) in
             do {
                 if let safeData = data {
-                    let result = try JSONDecoder().decode(CinemaSchema.self, from: safeData)
+                    let result = try JSONDecoder().decode(TopSchema.self, from: safeData)
                     DispatchQueue.main.async {
                         self.cinemaList = result.results
                         self.cinemaTable.reloadData()

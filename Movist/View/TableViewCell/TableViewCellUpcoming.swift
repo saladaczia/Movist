@@ -93,7 +93,7 @@ class TableViewCellUpcoming: UITableViewCell {
         if data.posterPath == nil {
             print("error")
         } else {
-            posterImageCell.downloadedCinema(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+            posterImageCell.downloadedUpcoming(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
         }
     }
     

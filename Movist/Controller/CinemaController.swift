@@ -27,6 +27,8 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     @IBOutlet weak var genresLabel: UIBarButtonItem!
     @IBOutlet weak var yearLabel: UIBarButtonItem!
     
+    // MARK: - Year Action
+    
     @IBAction func yearButton(_ sender: Any) {
         let popUpMenu:PopUpMenuUIViewControler = PopUpMenuUIViewControler()
            popUpMenu.style = myCustomPopUpStyle
@@ -55,24 +57,20 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
             PopUpMenuItem(title: "2001"),
             PopUpMenuItem(title: "2000")
               ]
+        // Showing menu
            popUpMenu.showMenu(menuIdentifier: "menu1", viewController: self, items: items, sourceView: sender,permittedArrowDirections: .any)
-            
+        // Set handler
            popUpMenu.setHandler { (selectedMenuIndex) in
                DispatchQueue.main.async {
                    self.yearString = items[selectedMenuIndex].title
-                   
                    self.yearLabel.title = items[selectedMenuIndex].title
                    self.getCinema()
-                   
                }
-               
-               
-              
-               
             }
     }
+    // MARK: - Genere Action
+    
     @IBAction func genreButton(_ sender: Any) {
-        
         let popUpMenu:PopUpMenuUIViewControler = PopUpMenuUIViewControler()
            popUpMenu.style = myCustomPopUpStyle
            let items:[PopUpMenuItem] = [
@@ -96,8 +94,9 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
             PopUpMenuItem(title: "Wojenny"),
             PopUpMenuItem(title: "Western")
               ]
+        // Showing menu
            popUpMenu.showMenu(menuIdentifier: "menu1", viewController: self, items: items, sourceView: sender,permittedArrowDirections: .any)
-            
+        // Set handler
            popUpMenu.setHandler { (selectedMenuIndex) in
                let selectedGenere = items[selectedMenuIndex].title
                self.genresLabel.title = selectedGenere
@@ -175,10 +174,9 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     var cinemaList = [CinemaResult]()
     
     
-    // MARK: - Function Cinema database
+    // MARK: - Function Cinema Session and JSON Decode
     
     func getCinema() {
-        
         let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&year=\(yearString)&with_genres=\(String(self.genreInt))&with_watch_monetization_types=flatrate")
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
@@ -243,6 +241,4 @@ class CinemaController: UIViewController, UITabBarDelegate, UITableViewDataSourc
             destinationSVC.movieTitle = titleMovie
         }
     }
-    
-    
 }

@@ -53,7 +53,7 @@ class DetailsController: UIViewController{
     
     
     
-    // MARK: - Actions
+    // MARK: - Action segue
     @IBAction func watchTrailer(_ sender: Any) {
         if movieTrailerUrl != "" {
             self.performSegue(withIdentifier: "goToWebFromDetails", sender: self)

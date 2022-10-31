@@ -14,7 +14,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     @IBOutlet weak var upcomingTable: UITableView!
     
     // MARK: - Variables and Constants
-    
+    var pageNumber = 1
     var upcomingIdNum = 0
     var titleMovie = ""
     var upcomingList = [UpcomingResult]()
@@ -22,14 +22,15 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     
     // MARK: - Function Upcoming database
     
-    func getUpcoming() {
+    func getUpcoming(urlString: String) {
+        let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
                 if let safeData = data {
                     let result = try JSONDecoder().decode(UpcomingSchema.self, from: safeData)
                     DispatchQueue.main.async {
-                        self.upcomingList = result.results
+                        self.upcomingList += result.results
                         self.upcomingTable.reloadData()
                     }
                 }
@@ -52,7 +53,11 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
         
         // Init movies database
-        getUpcoming()
+        for i in 0...9 {
+            pageNumber += i
+            getUpcoming(urlString: "https://api.themoviedb.org/3/movie/top_rated?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&page=1&region=PL&page=\(pageNumber)")
+        }
+        
         
     }
     

@@ -85,7 +85,7 @@ class TableViewCellCinema: UITableViewCell {
         originalTitleLabelCell.text = data.originalTitle
         yearLabelCell.text = "\(data.releaseDate.dropLast(6))"
         if data.voteAverage != 0 {
-        voteLabelCell.text = String(format: "%.2f", data.voteAverage)
+        voteLabelCell.text = String(format: "%.1f", data.voteAverage)
         } else {
             voteLabelCell.text = "0,0"
         }

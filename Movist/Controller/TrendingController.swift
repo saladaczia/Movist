@@ -16,15 +16,15 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     @IBOutlet weak var trendingTable: UITableView!
     
     // MARK: - Variables and Constants
-    
+    var pageNumber = 1
     var tradingIdNum = 0
     var titleMovie = ""
     var trendingList = [TrendingResult]()
-    let url = URL(string: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL")
     
     // MARK: - Function Trending database
     
-    func getTrending() {
+    func getTrending(urlString: String) {
+        let url = URL(string: urlString)
         URLSession.shared.dataTask(with: url!) {
             (data,response,error) in
         
@@ -32,7 +32,7 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
                 if let safeData = data {
                     let result = try JSONDecoder().decode(TrendingSchema.self, from: safeData)
                     DispatchQueue.main.async {
-                        self.trendingList = result.results
+                        self.trendingList += result.results
                         self.trendingTable.reloadData()
                     }
                 } 
@@ -42,6 +42,7 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
             }
         }.resume()
     }
+    
     
     // MARK: - ViewDidLoad
     
@@ -55,8 +56,12 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         trendingTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         
         // Init movies database
-        getTrending()
+        for i in 0...9 {
+            pageNumber += i
+            getTrending(urlString: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&page=\(pageNumber)")
+        }
         
+
     }
     
     
@@ -68,7 +73,9 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath) as! TableViewCell
+        
         cell.pushTrending(data: trendingList[indexPath.row])
+        
         return cell
     }
     

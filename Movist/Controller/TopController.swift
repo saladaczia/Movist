@@ -10,7 +10,9 @@ import SimplePopUpMenu
 
 class TopController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate{
     
-    // MARK: - Outlets
+    
+    // MARK: - Variables and Constants
+    
     let myCustomPopUpStyle:PopUpMenuStyle = {
            var result:PopUpMenuStyle = PopUpMenuStyle()
            result.baseColor = UIColor(named: "BarColor")!
@@ -23,6 +25,9 @@ class TopController: UIViewController, UITabBarDelegate, UITableViewDataSource, 
        }()
     var yearString = "2022"
     var genreInt = 28
+    
+    // MARK: - Outlets
+    
     @IBOutlet weak var cinemaTable: UITableView!
     @IBOutlet weak var genresLabel: UIBarButtonItem!
     @IBOutlet weak var yearLabel: UIBarButtonItem!

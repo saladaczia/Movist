@@ -14,7 +14,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     @IBOutlet weak var upcomingTable: UITableView!
     
     // MARK: - Variables and Constants
-    var pageNumber = 1
+    var pageNumber = 0
     var upcomingIdNum = 0
     var titleMovie = ""
     var upcomingList = [UpcomingResult]()
@@ -49,15 +49,17 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         // Navigation title
         navigationItem.title = "Top filmy"
         
-        // UINib table
-        upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
+        
         
         // Init movies database
-        for i in 0...9 {
-            pageNumber += i
+        for i in 1...20 {
+            pageNumber = i
             getUpcoming(urlString: "https://api.themoviedb.org/3/movie/top_rated?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&page=1&region=PL&page=\(pageNumber)")
+            self.upcomingTable.reloadData()
         }
         
+        // UINib table
+        upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
         
     }
     

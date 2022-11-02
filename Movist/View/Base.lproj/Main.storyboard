@@ -51,15 +51,15 @@
             <objects>
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="OuS-xT-ew9" customClass="SHCircleBarController" customModule="CircleBar" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="FsF-Hg-ftC">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" itemPositioning="fill" id="FsF-Hg-ftC">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
                         <segue destination="DRl-rE-9Di" kind="relationship" relationship="viewControllers" id="1Zb-O2-by8"/>
-                        <segue destination="QDg-gg-Vw4" kind="relationship" relationship="viewControllers" id="poi-r1-I8T"/>
                         <segue destination="N7Z-0F-5u5" kind="relationship" relationship="viewControllers" id="SDR-H4-Wsp"/>
+                        <segue destination="QDg-gg-Vw4" kind="relationship" relationship="viewControllers" id="poi-r1-I8T"/>
                         <segue destination="nR4-3A-qaH" kind="relationship" relationship="viewControllers" id="gcd-1q-T3g"/>
                     </connections>
                 </tabBarController>

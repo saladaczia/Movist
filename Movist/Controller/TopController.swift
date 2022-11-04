@@ -176,6 +176,7 @@ class TopController: UIViewController, UITabBarDelegate, UITableViewDataSource, 
     
     var cinemaIdNum = 0
     var titleMovie = ""
+    
     var cinemaList = [TopResult]()
     
     
@@ -212,7 +213,7 @@ class TopController: UIViewController, UITabBarDelegate, UITableViewDataSource, 
         
         // Init movies database
         getCinema()
-        
+        self.cinemaTable.reloadData()
     }
     
 

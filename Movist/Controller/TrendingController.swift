@@ -58,11 +58,12 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         for i in 1...20 {
             pageNumber = i
             getTrending(urlString: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&page=\(pageNumber)")
-            self.trendingTable.reloadData()
+            
         }
         
         // UINib table
         trendingTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
+        self.trendingTable.reloadData()
     }
     
     
@@ -78,6 +79,7 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         cell.pushTrending(data: trendingList[indexPath.row])
         
         return cell
+        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

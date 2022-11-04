@@ -103,14 +103,12 @@
 		4E01D3F828E5974D00C2D44F /* Movist */ = {
 			isa = PBXGroup;
 			children = (
-				4E01D3F928E5974D00C2D44F /* AppDelegate.swift */,
-				4E01D3FB28E5974D00C2D44F /* SceneDelegate.swift */,
+				4EC5FFBC2915849A00B9065C /* Delegates */,
 				4EF7D5AE290BD03200FFBE4F /* Menager */,
 				4E01D40F28E5A4D300C2D44F /* Model */,
 				4E01D40E28E5A4CB00C2D44F /* View */,
 				4E01D40D28E5A4C200C2D44F /* Controller */,
-				4E01D40228E5974F00C2D44F /* Assets.xcassets */,
-				4E01D40428E5974F00C2D44F /* LaunchScreen.storyboard */,
+				4EC5FFBB2915848900B9065C /* Settings Files */,
 				4E01D40728E5974F00C2D44F /* Info.plist */,
 			);
 			path = Movist;
@@ -145,6 +143,24 @@
 				4EF3200328EAE7F9002CE8AE /* SearchModel.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		4EC5FFBB2915848900B9065C /* Settings Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E01D40228E5974F00C2D44F /* Assets.xcassets */,
+				4E01D40428E5974F00C2D44F /* LaunchScreen.storyboard */,
+			);
+			path = "Settings Files";
+			sourceTree = "<group>";
+		};
+		4EC5FFBC2915849A00B9065C /* Delegates */ = {
+			isa = PBXGroup;
+			children = (
+				4E01D3F928E5974D00C2D44F /* AppDelegate.swift */,
+				4E01D3FB28E5974D00C2D44F /* SceneDelegate.swift */,
+			);
+			path = Delegates;
 			sourceTree = "<group>";
 		};
 		4EF31FFC28EADB6F002CE8AE /* TableViewCell */ = {
@@ -489,7 +505,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W6V4RR3FKW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movist/Info.plist;
@@ -503,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.4;
+				MARKETING_VERSION = 0.4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -519,7 +535,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = W6V4RR3FKW;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Movist/Info.plist;
@@ -533,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.4;
+				MARKETING_VERSION = 0.4.6;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

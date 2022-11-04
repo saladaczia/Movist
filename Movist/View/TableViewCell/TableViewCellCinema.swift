@@ -90,12 +90,14 @@ class TableViewCellCinema: UITableViewCell {
             voteLabelCell.text = "0,0"
         }
         genreLabelCell.text = genreString
-       
-        if data.posterPath == nil {
-            print("error")
-        } else {
-            posterImageCell.downloadedCinema(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+        DispatchQueue.main.async {
+            if data.posterPath == nil {
+                print("error")
+            } else {
+                self.posterImageCell.downloadedCinema(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+            }
         }
+        
         
     }
     

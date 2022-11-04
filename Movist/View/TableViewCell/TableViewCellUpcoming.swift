@@ -89,12 +89,14 @@ class TableViewCellUpcoming: UITableViewCell {
             voteLabelCell.text = "0,0"
         }
         genreLabelCell.text = genreString
-       
-        if data.posterPath == nil {
-            print("error")
-        } else {
-            posterImageCell.downloadedUpcoming(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+        DispatchQueue.main.async {
+            if data.posterPath == nil {
+                print("error")
+            } else {
+                self.posterImageCell.downloadedUpcoming(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+            }
         }
+        
     }
     
 }

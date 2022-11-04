@@ -78,13 +78,20 @@ class TableViewCell: UITableViewCell {
             genreString = ""
         }
         
-        titleLabelCell.text = data.title
-        originalTitleLabelCell.text = data.originalTitle
-        yearLabelCell.text = "\(data.releaseDate.dropLast(6))"
-        voteLabelCell.text = String(format: "%.1f", data.voteAverage)
-        genreLabelCell.text = genreString
-       
-        posterImageCell.downloaded(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath)")
+            titleLabelCell.text = data.title
+            originalTitleLabelCell.text = data.originalTitle
+            yearLabelCell.text = "\(data.releaseDate.dropLast(6))"
+            voteLabelCell.text = String(format: "%.1f", data.voteAverage)
+            genreLabelCell.text = genreString
+           
+        DispatchQueue.main.async {
+            if data.posterPath == nil {
+                print("error")
+            } else {
+                self.posterImageCell.downloaded(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+            }
+        }
+        
         
         
     }

@@ -27,8 +27,8 @@ struct TrendingResult: Codable {
     let id: Int
     let title: String
     
-    let originalTitle, posterPath: String
-    
+    let originalTitle: String
+    let posterPath: String?
     let genreIDS: [Int]
     
     let releaseDate: String

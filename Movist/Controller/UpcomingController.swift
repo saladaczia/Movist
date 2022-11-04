@@ -60,7 +60,7 @@ class UpcomingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         
         // UINib table
         upcomingTable.register(UINib(nibName: "TableViewCellUpcoming", bundle: nil), forCellReuseIdentifier: "cellUpcoming")
-        
+        self.upcomingTable.reloadData()
     }
     
     // MARK: - Upcoming Table

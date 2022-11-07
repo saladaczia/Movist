@@ -225,6 +225,7 @@ class TopController: UIViewController, UITabBarDelegate, UITableViewDataSource, 
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellCinema", for: indexPath) as! TableViewCellCinema
+        
         cell.pushCinema(data: cinemaList[indexPath.row])
         return cell
     }

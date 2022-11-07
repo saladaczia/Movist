@@ -88,6 +88,7 @@ class TableViewCell: UITableViewCell {
             if data.posterPath == nil {
                 print("error")
             } else {
+                
                 self.posterImageCell.downloaded(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
             }
         }
@@ -97,6 +98,7 @@ class TableViewCell: UITableViewCell {
     }
     
 }
+
 
 // MARK: - UIImage Extension (download image from url)
 extension UIImageView {

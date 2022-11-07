@@ -118,8 +118,8 @@
 			isa = PBXGroup;
 			children = (
 				4E01D41028E5A54D00C2D44F /* TrendingController.swift */,
-				4E01D41228E5A56B00C2D44F /* TopController.swift */,
 				4E01D41428E5A58200C2D44F /* UpcomingController.swift */,
+				4E01D41228E5A56B00C2D44F /* TopController.swift */,
 				4E01D41628E5A5AC00C2D44F /* SearchController.swift */,
 				4E01D41828E5A5CA00C2D44F /* DetailsController.swift */,
 				4EBECDBE28EC42C6000CFCA7 /* WebController.swift */,
@@ -519,7 +519,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.6;
+				MARKETING_VERSION = 0.4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -549,7 +549,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.4.6;
+				MARKETING_VERSION = 0.4.7;
 				PRODUCT_BUNDLE_IDENTIFIER = pl.goldenapp.Movist;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

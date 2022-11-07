@@ -16,7 +16,7 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     @IBOutlet weak var trendingTable: UITableView!
     
     // MARK: - Variables and Constants
-    var pageNumber = 0
+    
     var tradingIdNum = 0
     var titleMovie = ""
     var trendingList = [TrendingResult]()
@@ -55,11 +55,10 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         
         
         // Init movies database
-        for i in 1...20 {
-            pageNumber = i
-            getTrending(urlString: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&page=\(pageNumber)")
+        
+            getTrending(urlString: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&page")
             
-        }
+        
         
         // UINib table
         trendingTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")

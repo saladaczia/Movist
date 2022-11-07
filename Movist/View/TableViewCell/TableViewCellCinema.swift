@@ -93,7 +93,9 @@ class TableViewCellCinema: UITableViewCell {
         DispatchQueue.main.async {
             if data.posterPath == nil {
                 print("error")
+                
             } else {
+                
                 self.posterImageCell.downloadedCinema(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
             }
         }

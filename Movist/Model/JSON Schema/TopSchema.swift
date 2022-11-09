@@ -1,14 +1,13 @@
 //
-//  CinemaSchema.swift
+//  UpcomingSchema.swift
 //  Movist
 //
 //  Created by Maciej Sołoducha on 30/09/2022.
 //
 
-
 import Foundation
 
-// MARK: - TopSchema
+// MARK: - UpcomingSchema
 struct TopSchema: Codable {
     let page: Int
     let results: [TopResult]
@@ -24,20 +23,18 @@ struct TopSchema: Codable {
 // MARK: - Result
 struct TopResult: Codable {
     
-   
+    
     let genreIDS: [Int]
     let id: Int
     let originalTitle: String
     
-    let posterPath: String?
-    let releaseDate, title: String
-    
+    let posterPath, releaseDate, title: String?
+   
     let voteAverage: Double
     
 
     enum CodingKeys: String, CodingKey {
-        
-        
+       
         case genreIDS = "genre_ids"
         case id
         
@@ -50,5 +47,3 @@ struct TopResult: Codable {
         
     }
 }
-
-

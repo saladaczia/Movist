@@ -67,10 +67,10 @@
             </objects>
             <point key="canvasLocation" x="-343" y="76"/>
         </scene>
-        <!--Cinema-->
+        <!--Movies-->
         <scene sceneID="7V0-gg-swm">
             <objects>
-                <viewController id="X2V-Uz-ptu" userLabel="Cinema" customClass="TopController" customModule="Movist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="X2V-Uz-ptu" userLabel="Movies" customClass="MoviesController" customModule="Movist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="UJb-Dv-KcI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -108,10 +108,10 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="cinemaTable" destination="gSG-PM-vn1" id="Xxb-3e-9zo"/>
                         <outlet property="genresLabel" destination="OR8-WY-qOE" id="N6b-vT-9TN"/>
+                        <outlet property="moviesTable" destination="gSG-PM-vn1" id="Xxb-3e-9zo"/>
                         <outlet property="yearLabel" destination="7if-Zb-zb5" id="z16-CL-I4I"/>
-                        <segue destination="vUS-ya-VxP" kind="show" identifier="goToDetailsFromCinema" id="4ZQ-hH-PWF"/>
+                        <segue destination="vUS-ya-VxP" kind="show" identifier="goToDetailsFromMovies" id="4ZQ-hH-PWF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VAV-gk-7d7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -410,10 +410,10 @@
             </objects>
             <point key="canvasLocation" x="649.27536231884062" y="2511.8303571428569"/>
         </scene>
-        <!--Upcoming-->
+        <!--Top-->
         <scene sceneID="kyv-s1-Lfb">
             <objects>
-                <viewController id="R8M-Z0-OCW" userLabel="Upcoming" customClass="UpcomingController" customModule="Movist" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="R8M-Z0-OCW" userLabel="Top" customClass="TopController" customModule="Movist" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PyD-vX-Bau">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -438,8 +438,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="U0l-a8-fdk"/>
                     <connections>
-                        <outlet property="upcomingTable" destination="0Zs-tJ-zo9" id="G5u-li-hs7"/>
-                        <segue destination="vUS-ya-VxP" kind="show" identifier="goToDetailsFromUpcoming" id="ScB-PQ-5BI"/>
+                        <outlet property="TopTable" destination="0Zs-tJ-zo9" id="G5u-li-hs7"/>
+                        <segue destination="vUS-ya-VxP" kind="show" identifier="goToDetailsFromTop" id="ScB-PQ-5BI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="llg-z1-acA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -596,7 +596,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="4ZQ-hH-PWF"/>
+        <segue reference="ugM-J0-eQX"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="film" catalog="system" width="128" height="93"/>

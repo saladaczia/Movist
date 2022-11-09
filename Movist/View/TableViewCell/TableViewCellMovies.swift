@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewCellCinema: UITableViewCell {
+class TableViewCellMovies: UITableViewCell {
     
     // MARK: - Outlets
     
@@ -31,7 +31,7 @@ class TableViewCellCinema: UITableViewCell {
     
     // MARK: - Function push Cinema database
     
-    func pushCinema(data: TopResult) {
+    func pushMovies(data: MoviesResult) {
         var genreString = ""
         if data.genreIDS != [] {
             switch data.genreIDS[0] {
@@ -96,7 +96,7 @@ class TableViewCellCinema: UITableViewCell {
                 
             } else {
                 
-                self.posterImageCell.downloadedCinema(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+                self.posterImageCell.downloadedMovies(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
             }
         }
         
@@ -107,7 +107,7 @@ class TableViewCellCinema: UITableViewCell {
 
 // MARK: - UIImage Extension (download image from url)
 extension UIImageView {
-    func downloadedCinema(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloadedMovies(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -121,7 +121,7 @@ extension UIImageView {
             }
         }.resume()
     }
-    func downloadedCinema(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloadedMovies(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
     }

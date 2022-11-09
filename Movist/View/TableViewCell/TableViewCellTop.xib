@@ -11,7 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellUpcoming" rowHeight="168" id="C1t-yR-eeP" customClass="TableViewCellUpcoming" customModule="Movist" customModuleProvider="target">
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cellTop" rowHeight="168" id="C1t-yR-eeP" customClass="TableViewCellTop" customModule="Movist" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="391" height="168"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="C1t-yR-eeP" id="8mO-7d-paZ">

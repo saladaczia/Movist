@@ -7,7 +7,7 @@
 
 import UIKit
 
-class TableViewCellUpcoming: UITableViewCell {
+class TableViewCellTop: UITableViewCell {
 
     // MARK: - Outlets
     
@@ -30,7 +30,7 @@ class TableViewCellUpcoming: UITableViewCell {
     }
     
     // MARK: - Function push Upcoming database
-    func pushUpcoming(data: UpcomingResult) {
+    func pushUpcoming(data: TopResult) {
         var genreString = ""
         if data.genreIDS != [] {
             switch data.genreIDS[0] {
@@ -93,7 +93,7 @@ class TableViewCellUpcoming: UITableViewCell {
             if data.posterPath == nil {
                 print("error")
             } else {
-                self.posterImageCell.downloadedUpcoming(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
+                self.posterImageCell.downloadedTop(from: "https://image.tmdb.org/t/p/w342/\(data.posterPath!)")
             }
         }
         
@@ -103,7 +103,7 @@ class TableViewCellUpcoming: UITableViewCell {
 
 // MARK: - UIImage Extension (download image from url)
 extension UIImageView {
-    func downloadedUpcoming(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloadedTop(from url: URL, contentMode mode: ContentMode = .scaleAspectFit) {
         contentMode = mode
         URLSession.shared.dataTask(with: url) { data, response, error in
             guard
@@ -117,7 +117,7 @@ extension UIImageView {
             }
         }.resume()
     }
-    func downloadedUpcoming(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
+    func downloadedTop(from link: String, contentMode mode: ContentMode = .scaleAspectFit) {
         guard let url = URL(string: link) else { return }
         downloaded(from: url, contentMode: mode)
     }

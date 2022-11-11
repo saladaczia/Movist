@@ -244,8 +244,8 @@ class MoviesController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromMovies" {
             let destinationSVC = segue.destination as! DetailsController
-            destinationSVC.movieID = moviesIdNum
-            destinationSVC.movieTitle = titleMovie
+            destinationSVC.movieIDTwo = moviesIdNum
+            
         }
     }
 }

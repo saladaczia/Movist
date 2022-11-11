@@ -58,8 +58,7 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         
             getTrending(urlString: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&page")
             
-        
-        
+
         // UINib table
         trendingTable.register(UINib(nibName: "TableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         self.trendingTable.reloadData()
@@ -95,8 +94,8 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromTrending" {
             let destinationSVC = segue.destination as! DetailsController
-            destinationSVC.movieID = tradingIdNum
-            destinationSVC.movieTitle = titleMovie
+            destinationSVC.movieIDTwo = tradingIdNum
+            
         }
     }
     

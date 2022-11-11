@@ -47,6 +47,7 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         navigationItem.searchController = searchController
     }
     
+    
     // MARK: - Update Search function
     
     func updateSearchResults(for searchController: UISearchController) {
@@ -93,8 +94,8 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "goToDetailsFromSearch" {
             let destinationSVC = segue.destination as! DetailsController
-            destinationSVC.movieID = searchIdNum
-            destinationSVC.movieTitle = titleMovie
+            destinationSVC.movieIDTwo = searchIdNum
+            
         }
     }
     

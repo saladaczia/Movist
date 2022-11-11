@@ -7,8 +7,29 @@
 
 import UIKit
 import NVActivityIndicatorView
+import CoreData
+
 
 class DetailsController: UIViewController{
+    
+    
+    
+    // MARK: - Variables and Constants
+    
+    var movieID: Int64 = 0
+    var movieIDTwo = 0
+    var movieTitle = ""
+    var movieOriginalTitle = ""
+    var movieYear = ""
+    var movieVote = "0.0"
+    var movieGenre = ""
+    var providerTable = [String]()
+    var movieTrailerUrl = ""
+    var posterUrl = ""
+    
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var myList = [WatchList]()
+    
     
     // MARK: - Outlets
     
@@ -41,6 +62,7 @@ class DetailsController: UIViewController{
     
     @IBOutlet weak var trailerLabel: UIButton!
     @IBOutlet weak var conTrailer: NSLayoutConstraint!
+    @IBOutlet weak var conTrailerW: NSLayoutConstraint!
     @IBOutlet weak var voteLabel: UILabel!
     @IBOutlet weak var originalTitleLabel: UILabel!
     
@@ -50,10 +72,11 @@ class DetailsController: UIViewController{
     
     @IBOutlet weak var loadingView: NVActivityIndicatorView!
     @IBOutlet weak var LoadingBack: UIView!
+    @IBOutlet weak var addWatchListLabel: UIButton!
     
     
     
-    // MARK: - Action segue
+    // MARK: - Trailer Button Action - Segue
     @IBAction func watchTrailer(_ sender: Any) {
         if movieTrailerUrl != "" {
             self.performSegue(withIdentifier: "goToWebFromDetails", sender: self)
@@ -63,12 +86,8 @@ class DetailsController: UIViewController{
         
     }
     
-    // MARK: - Variables and Constants
     
-    var movieID = 0
-    var movieTitle = ""
-    var providerTable = [String]()
-    var movieTrailerUrl = ""
+    
     
     // MARK: - Prepare Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -78,16 +97,27 @@ class DetailsController: UIViewController{
         }
     }
     
-    // MARK: - Function Details database
+    // MARK: - Get Movie Details
     
     func getDetails() {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL")
+        // Api Url
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieIDTwo)?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL")
         
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
             do {
                 if let safeData = data {
                 let result = try JSONDecoder().decode(DetailSchema.self, from: safeData)
+                    
+                    // Atributes for CoreData
+                    self.movieID = Int64(result.id)
+                    self.movieTitle = result.title
+                    self.movieOriginalTitle = result.originalTitle
+                    self.movieYear = "\(result.releaseDate.dropLast(6))"
+                    self.movieGenre = "\(result.genres[0].name)"
+                    self.posterUrl = result.posterPath
+                    
+                    // Update Screen
                     DispatchQueue.main.async {
                         self.backdropImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.backdropPath)")
                         self.posterImage.downloaded(from: "https://image.tmdb.org/t/p/w500/\(result.posterPath)")
@@ -97,31 +127,31 @@ class DetailsController: UIViewController{
                         self.descriptionLabel.text = result.overview
                         self.starImage.isHidden = false
                         
+                        // Optional vote unwrap
                         if result.voteAverage != 0 {
                             self.voteLabel.text = String(format: "%.1f", result.voteAverage)
+                            self.movieVote = String(format: "%.1f", result.voteAverage)
                         } else {
                             self.voteLabel.text = "0,0"
                         }
                         
-
+                    // Stop loading screen
                     }
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         self.loadingView.stopAnimating()
                         self.LoadingBack.isHidden = true
                     }
                 }
-                
             } catch {
                 return
             }
-            
                     }.resume()
     }
     
-    // MARK: - Function get url trailer
+    // MARK: - Get Trailer
     
     func getTrailer() {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/videos?api_key=dfa4cb178f87b623801a1223f21a555d&language=en-US")
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieIDTwo)/videos?api_key=dfa4cb178f87b623801a1223f21a555d&language=en-US")
         
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
@@ -129,30 +159,29 @@ class DetailsController: UIViewController{
                 if let safeData = data {
                     let result = try JSONDecoder().decode(VideoSchema.self, from: safeData)
                     DispatchQueue.main.async {
-                        
+                        // Optional unwrap
                         if result.results.isEmpty {
                             self.trailerLabel.isHidden = true
                             self.conTrailer.constant = 0
+                            self.conTrailerW.constant = 0
                         } else {
                             self.trailerLabel.isHidden = false
                             self.movieTrailerUrl = result.results[0].key
                         }
-                           
                     }
                 }
                 
             } catch {
                 print("error")
             }
-            
         }.resume()
     }
     
     
-    // MARK: - Function Provider Movie Info
+    // MARK: - Get Provider
     
     func getProvider() {
-        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieID)/watch/providers?api_key=dfa4cb178f87b623801a1223f21a555d")
+        let url = URL(string: "https://api.themoviedb.org/3/movie/\(movieIDTwo)/watch/providers?api_key=dfa4cb178f87b623801a1223f21a555d")
         
         URLSession.shared.dataTask(with: url!) {
             (data,req,error) in
@@ -167,17 +196,16 @@ class DetailsController: UIViewController{
                             print("error")
                         }
                         
-                        
+                        // Add provider to table
                         for number in 0...myNumber {
                             if result.results.pl.flatrate?.count != nil {
                             self.providerTable.append(result.results.pl.flatrate![number].providerName)
                             } else {
                                 print("error")
-                                
                             }
                     }
                        
-                        
+                            // Set images provider
                             if self.providerTable.contains("Netflix") {
                                 self.StreamigOne.image = UIImage(named: "Netflix")
                                 self.conOne.constant = 48
@@ -225,23 +253,56 @@ class DetailsController: UIViewController{
                                 self.spaceSix.constant = 8
                                 }
                             }
-                        
-                        
                     }
                 }
                 
             } catch {
-                
                 print("error")
             }
-           
         }.resume()
     }
     
-    // MARK: - ViewDidLoad
+    // MARK: - Add Movie To WatchList
     
-    override func viewDidLoad() {
+    @IBAction func addWatchList(_ sender: Any) {
+        // Create new item to CoreData
+        if addWatchListLabel.isSelected == false {
+        let newMovie = WatchList(context: self.context)
+        newMovie.originalTitle = movieOriginalTitle
+        newMovie.id = Int64(movieID)
+        newMovie.title = movieTitle
+        newMovie.genre = movieGenre
+        newMovie.vote = movieVote
+        newMovie.year = movieYear
+        newMovie.posterPath = posterUrl
         
+            // Update Screen
+        
+            DispatchQueue.main.async {
+                self.myList.append(newMovie)
+                let config = UIImage.SymbolConfiguration(weight: .medium)
+                self.addWatchListLabel.setImage(UIImage(systemName: "checkmark", withConfiguration: config), for: .normal)
+                self.addWatchListLabel.setTitle(" Zapisano", for: .normal)
+                self.addWatchListLabel.isSelected = true
+                }
+        
+        do {
+            try context.save()
+            let notificationNme = NSNotification.Name("NotificationIdf")
+             NotificationCenter.default.post(name: notificationNme, object: nil)
+        } catch {
+            print("Error")
+        }
+       
+        }
+    }
+    
+    // MARK: - ViewDidLoad
+    override func viewDidLoad() {
+        let request: NSFetchRequest<WatchList> = WatchList.fetchRequest()
+        myList = try! context.fetch(request)
+        
+        // Init first setting
         LoadingBack.isHidden = false
         loadingView.isHidden = false
         loadingView.type = .ballBeat
@@ -252,11 +313,7 @@ class DetailsController: UIViewController{
         let backButton = UIBarButtonItem()
         backButton.title = movieTitle
         backButton.tintColor = UIColor.white
-        
-        
         self.navigationController?.navigationBar.topItem?.backBarButtonItem = backButton
-        
-       
         
         // init functions
         getDetails()
@@ -264,8 +321,6 @@ class DetailsController: UIViewController{
         getTrailer()
         
     }
-    
-
 }
 
 // MARK: - UIImage Extension (download image from url)

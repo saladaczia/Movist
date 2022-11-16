@@ -98,6 +98,7 @@ class MyListController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         if segue.identifier == "goToDetailsFromMyList" {
             let destinationSVC = segue.destination as! DetailsController
             destinationSVC.movieIDTwo = Int(MyListIdNum)
+            destinationSVC.hiddenAddButton = true
         }
     } 
 }

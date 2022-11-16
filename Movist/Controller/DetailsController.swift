@@ -29,7 +29,7 @@ class DetailsController: UIViewController{
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var myList = [WatchList]()
-    
+    var hiddenAddButton = false
     
     // MARK: - Outlets
     
@@ -299,6 +299,14 @@ class DetailsController: UIViewController{
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
+        if hiddenAddButton == true {
+            DispatchQueue.main.async {
+                let config = UIImage.SymbolConfiguration(weight: .medium)
+                self.addWatchListLabel.setImage(UIImage(systemName: "checkmark", withConfiguration: config), for: .normal)
+                self.addWatchListLabel.setTitle(" Zapisano", for: .normal)
+                self.addWatchListLabel.isSelected = true
+                }
+        }
         let request: NSFetchRequest<WatchList> = WatchList.fetchRequest()
         myList = try! context.fetch(request)
         
@@ -319,6 +327,7 @@ class DetailsController: UIViewController{
         getDetails()
         getProvider()
         getTrailer()
+        
         
     }
 }

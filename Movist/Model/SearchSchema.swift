@@ -11,7 +11,7 @@ import Foundation
 // MARK: - TrendingSchema
 struct SearchSchema: Codable {
     let page: Int
-    let results: [Result]
+    let results: [SearchResult]
     let totalPages, totalResults: Int
 
     enum CodingKeys: String, CodingKey {
@@ -22,7 +22,7 @@ struct SearchSchema: Codable {
 }
 
 // MARK: - Result
-struct Result: Codable {
+struct SearchResult: Codable {
     let adult: Bool?
     let id: Int
     let title: String

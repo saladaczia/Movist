@@ -17,8 +17,8 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
     var searchIdNum = 0
     var titleMovie = ""
     let searchController = UISearchController()
-    var cellContent: [Result] = []
-    var movieManager = SearchManager()
+    var cellContent = [SearchResult]()
+    var searchManager = SearchManager()
     
     // MARK: - Function Search database
     
@@ -26,7 +26,7 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         
         DispatchQueue.main.async {
             // Wygenerowana wartość
-            self.cellContent = movie.movieTitle
+            self.cellContent = movie.SearchDataModel
             self.searchTable.reloadData()
             
         }
@@ -42,7 +42,7 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         title = "Szukaj filmu"
         
         // Delegate
-        movieManager.delegate = self
+        searchManager.delegate = self
         searchController.searchResultsUpdater = self
         navigationItem.searchController = searchController
     }
@@ -54,7 +54,7 @@ class SearchController: UIViewController, SearchManagerDelegate, UITableViewDele
         guard let text = searchController.searchBar.text else {
             return
         }
-        movieManager.fetchMovie(movieName: text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
+        searchManager.performRequest(movieName: text.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!)
     }
     
     // MARK: - Search Table

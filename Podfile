@@ -9,5 +9,5 @@ target 'Movist' do
 pod 'CircleBar'
 pod 'SimplePopUpMenu'
 pod 'NVActivityIndicatorView'
-
+pod 'Alamofire'
 end

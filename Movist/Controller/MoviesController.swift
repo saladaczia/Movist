@@ -8,7 +8,9 @@
 import UIKit
 import SimplePopUpMenu
 
-class MoviesController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate{
+class MoviesController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate, MoviesManagerDelegate {
+   
+    
     
     
     // MARK: - Variables and Constants
@@ -25,6 +27,7 @@ class MoviesController: UIViewController, UITabBarDelegate, UITableViewDataSourc
        }()
     var yearString = "2022"
     var genreInt = 28
+    var moviesManager = MoviesManager()
     
     // MARK: - Outlets
     
@@ -179,27 +182,16 @@ class MoviesController: UIViewController, UITabBarDelegate, UITableViewDataSourc
     
     var moviesList = [MoviesResult]()
     
-    
-    // MARK: - Function Movies Session and JSON Decode
-    
     func getMovies() {
-        let url = URL(string: "https://api.themoviedb.org/3/discover/movie?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&year=\(yearString)&with_genres=\(String(self.genreInt))&with_watch_monetization_types=flatrate")
-        URLSession.shared.dataTask(with: url!) {
-            (data,req,error) in
-            do {
-                if let safeData = data {
-                    let result = try JSONDecoder().decode(MoviesSchema.self, from: safeData)
-                    DispatchQueue.main.async {
-                        self.moviesList = result.results
-                        self.moviesTable.reloadData()
-                    }
-                }
-                
-            } catch {
-                print("error")
-            }
-        }.resume()
+        moviesManager.performRequest(requestUrl: "https://api.themoviedb.org/3/discover/movie?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&sort_by=vote_average.desc&include_adult=false&include_video=false&page=1&year=\(yearString)&with_genres=\(String(self.genreInt))&with_watch_monetization_types=flatrate")
     }
+    
+    func didUpdateMovie(movie: MoviesModel) {
+        self.moviesList += movie.movieModel
+        self.moviesTable.reloadData()
+    }
+    
+    
     
     // MARK: - ViewDidLoad
     
@@ -207,6 +199,8 @@ class MoviesController: UIViewController, UITabBarDelegate, UITableViewDataSourc
         super.viewDidLoad()
         // Navigation title
         navigationItem.title = "Filmy"
+        
+        moviesManager.delegate = self
         
         // UINib table
         moviesTable.register(UINib(nibName: "TableViewCellMovies", bundle: nil), forCellReuseIdentifier: "cellMovies")

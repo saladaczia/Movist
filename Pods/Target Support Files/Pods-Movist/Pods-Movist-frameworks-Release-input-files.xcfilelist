@@ -1,4 +1,5 @@
 ${PODS_ROOT}/Target Support Files/Pods-Movist/Pods-Movist-frameworks.sh
+${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework
 ${BUILT_PRODUCTS_DIR}/CircleBar/CircleBar.framework
 ${BUILT_PRODUCTS_DIR}/NVActivityIndicatorView/NVActivityIndicatorView.framework
 ${BUILT_PRODUCTS_DIR}/SimplePopUpMenu/SimplePopUpMenu.framework

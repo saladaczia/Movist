@@ -9,7 +9,9 @@ import UIKit
 
 
 
-class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSource, UITableViewDelegate, TrendingManagerDelegate {
+   
+    
     
     // MARK: - Outlets
     
@@ -20,29 +22,7 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
     var tradingIdNum = 0
     var titleMovie = ""
     var trendingList = [TrendingResult]()
-    
-    // MARK: - Function Trending database
-    
-    func getTrending(urlString: String) {
-        let url = URL(string: urlString)
-        URLSession.shared.dataTask(with: url!) {
-            (data,response,error) in
-        
-            do {
-                if let safeData = data {
-                    let result = try JSONDecoder().decode(TrendingSchema.self, from: safeData)
-                    DispatchQueue.main.async {
-                        self.trendingList += result.results
-                        self.trendingTable.reloadData()
-                    }
-                } 
-                
-            } catch {
-                print("error")
-            }
-        }.resume()
-    }
-    
+    var trendingManager = TrendingManager()
     
     // MARK: - ViewDidLoad
     
@@ -52,11 +32,9 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         // Navigation title
         navigationItem.title = "Popularne"
         
+        trendingManager.delegate = self
+        trendingManager.runRequest()
         
-        
-        // Init movies database
-        
-            getTrending(urlString: "https://api.themoviedb.org/3/trending/movie/week?api_key=dfa4cb178f87b623801a1223f21a555d&language=pl-PL&region=PL&page")
             
 
         // UINib table
@@ -64,6 +42,10 @@ class TrendingController: UIViewController, UITabBarDelegate, UITableViewDataSou
         self.trendingTable.reloadData()
     }
     
+    func didUpdateMovie(movie: TrendingModel) {
+        self.trendingList += movie.trendingDataModel
+        self.trendingTable.reloadData()
+    }
     
     // MARK: - Trending Table
     

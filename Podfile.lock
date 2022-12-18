@@ -1,4 +1,5 @@
 PODS:
+  - Alamofire (5.6.3)
   - CircleBar (0.8.2)
   - NVActivityIndicatorView (5.1.1):
     - NVActivityIndicatorView/Base (= 5.1.1)
@@ -6,21 +7,24 @@ PODS:
   - SimplePopUpMenu (0.1.0)
 
 DEPENDENCIES:
+  - Alamofire
   - CircleBar
   - NVActivityIndicatorView
   - SimplePopUpMenu
 
 SPEC REPOS:
   trunk:
+    - Alamofire
     - CircleBar
     - NVActivityIndicatorView
     - SimplePopUpMenu
 
 SPEC CHECKSUMS:
+  Alamofire: 8b7a946e9db6f76e93eaa0d4c84e3751633959c9
   CircleBar: 8e17d2090e6e319b518010535a3145fb8fd68c22
   NVActivityIndicatorView: 1f6c5687f1171810aa27a3296814dc2d7dec3667
   SimplePopUpMenu: f07eae0d86e633f28061289a1712773e0c588ce0
 
-PODFILE CHECKSUM: d589d1dca4e16b920582dd7a5b9b8134ca562399
+PODFILE CHECKSUM: 1ee72140156d12f3adda594601afffb1b8e1ea08
 
-COCOAPODS: 1.8.4
+COCOAPODS: 1.11.3
